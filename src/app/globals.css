@@ -1,26 +1,143 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #070809;
+  --foreground: #f4f4f2;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+@theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-serif: var(--font-serif);
+  
+  /* Brand color tokens: Steel + Heritage + Quiet Luxury */
+  --color-charcoal: #070809;
+  --color-graphite: #121315;
+  --color-steel: #7f8a96;
+  --color-steel-light: #adb9c7;
+  --color-stone: #22252a;
+  --color-ivory: #f4f4f2;
+  --color-bronze: #a39073;
+  --color-bronze-dark: #6e5e48;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-charcoal);
+  color: var(--color-ivory);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
 }
+
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-charcoal);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-stone);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-steel);
+}
+
+/* Base interactive transitions */
+a, button {
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Grid lines pattern matching technical blueprints */
+.tech-grid-lines {
+  background-image: 
+    linear-gradient(to right, rgba(127, 138, 150, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(127, 138, 150, 0.05) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.tech-grid-lines-fine {
+  background-image: 
+    linear-gradient(to right, rgba(127, 138, 150, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(127, 138, 150, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Metallic Shimmer Effect for Luxury Titles */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #f8fafc 15%,
+    #e2e8f0 30%,
+    #cbd5e1 45%,
+    #94a3b8 55%,
+    #cbd5e1 65%,
+    #f1f5f9 80%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 8s linear infinite;
+  display: inline-block;
+  /* Fix the black/dark text-clipping bug by using filter drop-shadow instead of text-shadow */
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.95)) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.85));
+}
+
+/* Premium Text Shadows for legibility against dynamic scroll backgrounds */
+.text-shadow-premium {
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 2px 6px rgba(0, 0, 0, 0.85);
+}
+
+.text-shadow-subtle {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* Lenis Smooth Scroll Configuration */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom Silent Roaring Breathing Watermark Effect */
+@keyframes silent-roar {
+  0%, 100% {
+    opacity: 0.015;
+    filter: drop-shadow(0 0 5px rgba(163, 144, 115, 0));
+  }
+  50% {
+    opacity: 0.045;
+    filter: drop-shadow(0 0 30px rgba(163, 144, 115, 0.12));
+  }
+}
+
+.animate-silent-roar {
+  animation: silent-roar 14s ease-in-out infinite;
+}
+

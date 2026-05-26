@@ -1,65 +1,153 @@
-import Image from "next/image";
+"use client";
+
+import React, { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import Navbar from "@/components/Navbar";
+import Preloader from "@/components/Preloader";
+import CinematicCanvas from "@/components/CinematicCanvas";
+import Hero from "@/components/Hero";
+import Origin from "@/components/Origin";
+import Projects from "@/components/Projects";
+import Capabilities from "@/components/Capabilities";
+import Process from "@/components/Process";
+import Compliance from "@/components/Compliance";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
+  const [images, setImages] = useState<HTMLImageElement[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [showFixedCta, setShowFixedCta] = useState(true);
+
+  useEffect(() => {
+    if (isLoading) return;
+    const handleScroll = () => {
+      // Hide CTA when scrolling past the runway and contact form comes up
+      const threshold = window.innerHeight * 5.8;
+      if (window.scrollY > threshold) {
+        setShowFixedCta(false);
+      } else {
+        setShowFixedCta(true);
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isLoading]);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="bg-charcoal text-ivory min-h-screen relative selection:bg-bronze/30 selection:text-white flex flex-col justify-between">
+      <AnimatePresence mode="wait">
+        {isLoading ? (
+          <Preloader
+            key="preloader"
+            onComplete={(loaded) => {
+              setImages(loaded);
+              setIsLoading(false);
+            }}
+          />
+        ) : (
+          <motion.div
+            key="content"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="relative flex flex-col"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+            {/* Global Navigation */}
+            <Navbar />
+
+            {/* Persistent Fixed Viewport CTA - "Start Your Build" */}
+            <div 
+              className={`fixed bottom-8 right-8 md:bottom-12 md:right-12 z-40 transition-all duration-700 pointer-events-auto ${
+                showFixedCta 
+                  ? "opacity-100 translate-y-0 scale-100" 
+                  : "opacity-0 translate-y-6 scale-90 pointer-events-none"
+              }`}
+            >
+              <a
+                href="#commission"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4.5 border border-bronze bg-[#070809]/95 text-white hover:bg-bronze hover:text-[#070809] hover:shadow-[0_0_45px_rgba(163,144,115,0.45)] hover:scale-[1.03] active:scale-[0.97] text-xs sm:text-sm tracking-[0.22em] font-bold uppercase transition-all duration-500 rounded-full cursor-pointer group shadow-2xl relative overflow-hidden"
+              >
+                <span>Start Your Build</span>
+                <span className="text-[10px] text-bronze group-hover:text-[#070809] transition-colors duration-500 font-mono tracking-widest font-bold">// 07 →</span>
+              </a>
+            </div>
+
+            {/* Main Long-Scroll Cinematic Section */}
+            <main className="flex-grow">
+              
+              {/* 
+                Streamlined Scroll Runway = 700vh.
+                Holds all B2B narrative components as cinematic overlay panels.
+                Exposes the animated cinematic video sequence with absolute visual clarity.
+              */}
+              <div className="relative w-full h-[700vh]">
+                
+                {/* Pinned Sticky Canvas Background */}
+                <div className="sticky top-0 h-screen w-full overflow-hidden z-0">
+                  <CinematicCanvas images={images} />
+                </div>
+
+                {/* Vertical Overlay content stack */}
+                <div className="absolute top-0 left-0 w-full h-full z-10 flex flex-col pointer-events-none">
+                  
+                  {/* Section 01: Cinematic Hero (0vh to 100vh) */}
+                  <div className="h-screen w-full shrink-0 flex items-center justify-center">
+                    <Hero />
+                  </div>
+
+                  {/* Section 02: Origin & Heritage (100vh to 200vh) */}
+                  <div className="h-screen w-full shrink-0">
+                    <Origin />
+                  </div>
+
+                  {/* Section 03: Chassis & Coach Ranges (200vh to 300vh) */}
+                  <div className="h-screen w-full shrink-0">
+                    <Projects />
+                  </div>
+
+                  {/* Section 04: Engineering Services (300vh to 400vh) */}
+                  <div className="h-screen w-full shrink-0">
+                    <Capabilities />
+                  </div>
+
+                  {/* Section 05: Blueprint-to-Delivery Process Timeline (400vh to 500vh) */}
+                  <div className="h-screen w-full shrink-0">
+                    <Process />
+                  </div>
+
+                  {/* Section 06: Regulatory Validation & Certifications (500vh to 600vh) */}
+                  <div className="h-screen w-full shrink-0">
+                    <Compliance />
+                  </div>
+
+                  {/* Section 07: Cinematic Outro Resolve Runway (600vh to 700vh) */}
+                  <div className="h-screen w-full shrink-0 pointer-events-none" />
+
+                </div>
+
+              </div>
+
+              {/* 
+                Bespoke Commission Form (Contact)
+                Renders below the visual scroll container as a standard full-screen static block.
+              */}
+              <div id="commission" className="relative bg-charcoal border-t border-stone/20">
+                {/* Background Blueprint Grid Lines */}
+                <div className="absolute inset-0 tech-grid-lines pointer-events-none opacity-[0.12]" />
+                <div className="absolute inset-0 tech-grid-lines-fine pointer-events-none opacity-[0.08]" />
+                <Contact />
+              </div>
+
+            </main>
+
+            {/* Premium B2B Footer */}
+            <Footer />
+
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

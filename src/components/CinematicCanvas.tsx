@@ -1,0 +1,172 @@
+"use client";
+
+import React, { useEffect, useRef, useState } from "react";
+
+interface CinematicCanvasProps {
+  images: HTMLImageElement[];
+}
+
+export default function CinematicCanvas({ images }: CinematicCanvasProps) {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const animationRef = useRef<number | null>(null);
+  const lastFrameIndexRef = useRef<number>(-1);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas || !images.length) return;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    // Lerp state — smooth interpolation between scroll target and rendered frame
+    let targetProgress = 0;
+    let currentProgress = 0;
+    const LERP_FACTOR = 0.045; // Lower = smoother & slower easing. 0.045 = premium cinematic glide
+    const LERP_THRESHOLD = 0.0001; // Stop lerping when close enough
+
+    // Resizing with High-DPI Support
+    const resizeCanvas = () => {
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = "high";
+      
+      // Force immediate redraw on resize
+      lastFrameIndexRef.current = -1;
+    };
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    // Frame drawing routine
+    const drawFrame = (progress: number) => {
+      const totalFrames = images.length;
+      const frameIndex = Math.max(
+        0,
+        Math.min(totalFrames - 1, Math.floor(progress * totalFrames))
+      );
+
+      // Only redraw when the frame actually changes
+      if (frameIndex === lastFrameIndexRef.current) return;
+
+      const img = images[frameIndex];
+      if (!img || !img.complete) return;
+
+      const canvasWidth = canvas.width;
+      const canvasHeight = canvas.height;
+
+      // Clear the canvas
+      ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+
+      // Cover-Fit Math (draws image centered like background-size: cover)
+      const imgWidth = img.naturalWidth || img.width;
+      const imgHeight = img.naturalHeight || img.height;
+      const imgRatio = imgWidth / imgHeight;
+      const canvasRatio = canvasWidth / canvasHeight;
+
+      let drawWidth = canvasWidth;
+      let drawHeight = canvasHeight;
+      let offsetX = 0;
+      let offsetY = 0;
+
+      if (canvasRatio > imgRatio) {
+        drawHeight = canvasWidth / imgRatio;
+        offsetY = (canvasHeight - drawHeight) / 2;
+      } else {
+        drawWidth = canvasHeight * imgRatio;
+        offsetX = (canvasWidth - drawWidth) / 2;
+      }
+
+      // Premium Cinematic Zoom Effect (slowly zooms out from 1.04 to 1.00)
+      const zoomScale = 1.04 - progress * 0.04;
+      
+      ctx.save();
+      ctx.translate(canvasWidth / 2, canvasHeight / 2);
+      ctx.scale(zoomScale, zoomScale);
+      ctx.translate(-canvasWidth / 2, -canvasHeight / 2);
+
+      ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+      ctx.restore();
+
+      lastFrameIndexRef.current = frameIndex;
+    };
+
+    // Helper to get absolute offsetTop relative to the document root
+    const getAbsoluteOffsetTop = (element: HTMLElement) => {
+      let top = 0;
+      let el: HTMLElement | null = element;
+      while (el) {
+        top += el.offsetTop;
+        el = el.offsetParent as HTMLElement | null;
+      }
+      return top;
+    };
+
+    // requestAnimationFrame Tick — lerp-interpolated smooth frame rendering
+    const tick = () => {
+      const scrollContainer = canvas.parentElement?.parentElement?.parentElement as HTMLElement | null;
+
+      if (scrollContainer) {
+        const absoluteTop = getAbsoluteOffsetTop(scrollContainer);
+        const containerHeight = scrollContainer.offsetHeight;
+        const scrollY = window.scrollY;
+        const scrollHeight = containerHeight - window.innerHeight;
+        
+        const scrollTop = scrollY - absoluteTop;
+        targetProgress = Math.max(0, Math.min(1, scrollTop / scrollHeight));
+        
+        // Smooth lerp: ease currentProgress toward targetProgress
+        const delta = targetProgress - currentProgress;
+        if (Math.abs(delta) > LERP_THRESHOLD) {
+          currentProgress += delta * LERP_FACTOR;
+        } else {
+          currentProgress = targetProgress;
+        }
+        
+        setScrollProgress(currentProgress);
+        drawFrame(currentProgress);
+      }
+      animationRef.current = requestAnimationFrame(tick);
+    };
+
+    animationRef.current = requestAnimationFrame(tick);
+
+    return () => {
+      window.removeEventListener("resize", resizeCanvas);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [images]);
+
+  return (
+    <div className="absolute inset-0 w-full h-full bg-charcoal pointer-events-none select-none">
+      {/* Canvas Element */}
+      <canvas
+        ref={canvasRef}
+        className="w-full h-full object-cover block"
+        style={{
+          width: "100%",
+          height: "100%",
+        }}
+      />
+
+      {/* Faint Technical Blueprint Grid Lines */}
+      <div className="absolute inset-0 tech-grid-lines pointer-events-none opacity-[0.12]" />
+      <div className="absolute inset-0 tech-grid-lines-fine pointer-events-none opacity-[0.08]" />
+
+      {/* Cinematic Dark Vignette — lightened for better video visibility */}
+      <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-charcoal/50 pointer-events-none mix-blend-multiply opacity-50" />
+      <div className="absolute inset-0 bg-gradient-to-r from-charcoal/60 via-transparent to-charcoal/60 pointer-events-none opacity-25" />
+
+      {/* Structural Steel Border Lines at Viewport Edges */}
+      <div className="absolute top-0 left-0 w-full h-px bg-stone/20" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-stone/20" />
+      <div className="absolute top-0 left-0 w-px h-full bg-stone/20" />
+      <div className="absolute top-0 right-0 w-px h-full bg-stone/20" />
+
+    </div>
+  );
+}
