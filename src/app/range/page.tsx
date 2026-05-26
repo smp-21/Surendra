@@ -61,7 +61,7 @@ export default function RangePage() {
                     </p>
                   </div>
 
-                  <div className="flex flex-col justify-center gap-3 font-mono text-[10px] border-l border-stone/15 pl-8">
+                  <div className="flex flex-col justify-center gap-3 font-mono text-[10px] border-t lg:border-t-0 border-l-0 lg:border-l border-stone/15 pl-0 lg:pl-8 pt-6 lg:pt-0">
                     <div className="flex justify-between border-b border-stone/10 pb-2">
                       <span className="text-zinc-400 font-medium">CHASSIS</span>
                       <span className="text-white font-bold">{coach.specs.chassis}</span>

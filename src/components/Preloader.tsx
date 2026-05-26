@@ -5,71 +5,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Terminal, ShieldCheck, HardHat, Cpu } from "lucide-react";
 
 interface PreloaderProps {
-  onComplete: (images: HTMLImageElement[]) => void;
+  progress: number;
+  activeBatch: number;
+  totalBatches: number;
 }
 
 const TOTAL_FRAMES = 482;
-const BATCH_SIZE = 40;
 
-export default function Preloader({ onComplete }: PreloaderProps) {
-  const [progress, setProgress] = useState(0);
-  const [activeBatch, setActiveBatch] = useState(1);
-  const totalBatches = Math.ceil(TOTAL_FRAMES / BATCH_SIZE);
-
-  useEffect(() => {
-    let active = true;
-
-    const loadFrames = async () => {
-      const imagesArray: HTMLImageElement[] = new Array(TOTAL_FRAMES);
-      let loadedCount = 0;
-
-      const indices = Array.from({ length: TOTAL_FRAMES }, (_, i) => i + 1);
-
-      for (let i = 0; i < indices.length; i += BATCH_SIZE) {
-        if (!active) return;
-        const currentBatchIndex = Math.floor(i / BATCH_SIZE) + 1;
-        setActiveBatch(currentBatchIndex);
-
-        const batch = indices.slice(i, i + BATCH_SIZE);
-
-        await Promise.all(
-          batch.map((index) => {
-            return new Promise<void>((resolve) => {
-              const img = new Image();
-              const frameNum = String(index).padStart(3, "0");
-              img.src = `/frames/frame_${frameNum}.webp`;
-              
-              img.onload = () => {
-                imagesArray[index - 1] = img;
-                loadedCount++;
-                setProgress(Math.min(loadedCount / TOTAL_FRAMES, 1));
-                resolve();
-              };
-
-              img.onerror = () => {
-                imagesArray[index - 1] = img;
-                loadedCount++;
-                setProgress(Math.min(loadedCount / TOTAL_FRAMES, 1));
-                resolve();
-              };
-            });
-          })
-        );
-      }
-
-      if (active) {
-        setTimeout(() => {
-          onComplete(imagesArray);
-        }, 800);
-      }
-    };
-
-    loadFrames();
-
-    return () => {
-      active = false;
-    };
-  }, [onComplete]);
+export default function Preloader({ progress, activeBatch, totalBatches }: PreloaderProps) {
 
   const percentage = Math.round(progress * 100);
 

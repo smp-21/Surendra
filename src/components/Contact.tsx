@@ -54,22 +54,22 @@ export default function Contact() {
   return (
     <section 
       id="commission" 
-      className="relative min-h-screen w-full flex items-center justify-center py-24 px-6 sm:px-12 md:px-16 lg:px-20 select-none overflow-hidden"
+      className="relative min-h-screen w-full flex items-center justify-center py-16 sm:py-24 px-4 sm:px-12 md:px-16 lg:px-20 select-none overflow-hidden"
     >
       <div className="max-w-3xl mx-auto w-full relative z-10 flex flex-col justify-center">
         
         {/* Section Header */}
-        <div className="max-w-2xl mx-auto text-center mb-12">
+        <div className="max-w-2xl mx-auto text-center mb-8 sm:mb-12">
           <div className="flex items-center justify-center gap-2 mb-3">
             <Mail className="w-4 h-4 text-bronze animate-pulse" />
             <span className="font-mono text-[10px] tracking-[0.3em] text-steel-light uppercase font-bold">
               Acquisitions
             </span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[0.15em] uppercase text-white">
+          <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl font-semibold tracking-[0.1em] sm:tracking-[0.15em] uppercase text-white leading-tight">
             Let's Build <span className="italic text-bronze font-light">Something Enduring.</span>
           </h2>
-          <p className="text-zinc-400 text-xs tracking-wider uppercase font-mono mt-4">
+          <p className="text-zinc-400 text-[10px] sm:text-xs tracking-wider uppercase font-mono mt-3 sm:mt-4">
             Submit your chassis brief or custom build requirements.
           </p>
         </div>
@@ -80,7 +80,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-10%" }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="bg-charcoal/75 border border-white/[0.15] backdrop-blur-xl p-8 md:p-12 w-full max-w-2xl mx-auto rounded-[24px] shadow-2xl transition-all duration-500 hover:border-bronze/60 hover:bg-charcoal/85 hover:shadow-[0_20px_50px_rgba(163,144,115,0.15)]"
+          className="bg-charcoal/45 border border-white/[0.12] backdrop-blur-xl p-5 sm:p-8 md:p-12 w-full max-w-2xl mx-auto rounded-[24px] shadow-2xl transition-all duration-500 hover:border-bronze/60 hover:bg-charcoal/55 hover:shadow-[0_20px_50px_rgba(163,144,115,0.15)]"
         >
           <AnimatePresence mode="wait">
             {submitStatus !== "success" ? (

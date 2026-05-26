@@ -141,3 +141,10 @@ html.lenis, html.lenis body {
   animation: silent-roar 14s ease-in-out infinite;
 }
 
+/* Technical node badge vertical collision safety override */
+@media (max-height: 800px) {
+  .hero-top-badge {
+    display: none !important;
+  }
+}
+

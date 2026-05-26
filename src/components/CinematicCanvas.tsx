@@ -43,16 +43,46 @@ export default function CinematicCanvas({ images }: CinematicCanvasProps) {
     // Frame drawing routine
     const drawFrame = (progress: number) => {
       const totalFrames = images.length;
+      if (totalFrames === 0) return;
+
       const frameIndex = Math.max(
         0,
         Math.min(totalFrames - 1, Math.floor(progress * totalFrames))
       );
 
-      // Only redraw when the frame actually changes
-      if (frameIndex === lastFrameIndexRef.current) return;
+      let img = images[frameIndex];
+      let drawnFrameIndex = frameIndex;
 
-      const img = images[frameIndex];
-      if (!img || !img.complete) return;
+      // Nearest-neighbor loaded frame fallback search
+      if (!img || !img.complete) {
+        let found = false;
+        let step = 1;
+        while (frameIndex - step >= 0 || frameIndex + step < totalFrames) {
+          if (frameIndex - step >= 0) {
+            const leftImg = images[frameIndex - step];
+            if (leftImg && leftImg.complete) {
+              img = leftImg;
+              drawnFrameIndex = frameIndex - step;
+              found = true;
+              break;
+            }
+          }
+          if (frameIndex + step < totalFrames) {
+            const rightImg = images[frameIndex + step];
+            if (rightImg && rightImg.complete) {
+              img = rightImg;
+              drawnFrameIndex = frameIndex + step;
+              found = true;
+              break;
+            }
+          }
+          step++;
+        }
+        if (!found || !img) return; // No frames loaded at all
+      }
+
+      // Only redraw when the drawn frame actually changes
+      if (drawnFrameIndex === lastFrameIndexRef.current) return;
 
       const canvasWidth = canvas.width;
       const canvasHeight = canvas.height;
@@ -90,7 +120,7 @@ export default function CinematicCanvas({ images }: CinematicCanvasProps) {
       ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
       ctx.restore();
 
-      lastFrameIndexRef.current = frameIndex;
+      lastFrameIndexRef.current = drawnFrameIndex;
     };
 
     // Helper to get absolute offsetTop relative to the document root

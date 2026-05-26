@@ -14,10 +14,123 @@ import Compliance from "@/components/Compliance";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
+const TOTAL_FRAMES = 482;
+
 export default function Home() {
   const [images, setImages] = useState<HTMLImageElement[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [preloadProgress, setPreloadProgress] = useState(0);
+  const [activeBatch, setActiveBatch] = useState(1);
+  const [totalBatches, setTotalBatches] = useState(4);
   const [showFixedCta, setShowFixedCta] = useState(true);
+
+  useEffect(() => {
+    let active = true;
+    const imagesArray: HTMLImageElement[] = new Array(TOTAL_FRAMES);
+
+    const loadLevel = async (
+      indices: number[],
+      onProgress: (pct: number, batchIdx: number, total: number) => void
+    ) => {
+      const BATCH_SIZE = 20;
+      let loaded = 0;
+      const totalIndices = indices.length;
+      const batchesCount = Math.ceil(totalIndices / BATCH_SIZE);
+
+      for (let i = 0; i < totalIndices; i += BATCH_SIZE) {
+        if (!active) return;
+        const currentBatchIndex = Math.floor(i / BATCH_SIZE) + 1;
+        const batch = indices.slice(i, i + BATCH_SIZE);
+
+        await Promise.all(
+          batch.map((index) => {
+            return new Promise<void>((resolve) => {
+              const img = new Image();
+              const frameNum = String(index).padStart(3, "0");
+              img.src = `/frames/frame_${frameNum}.webp`;
+
+              img.onload = () => {
+                imagesArray[index - 1] = img;
+                loaded++;
+                onProgress(loaded / totalIndices, currentBatchIndex, batchesCount);
+                resolve();
+              };
+
+              img.onerror = () => {
+                imagesArray[index - 1] = img;
+                loaded++;
+                onProgress(loaded / totalIndices, currentBatchIndex, batchesCount);
+                resolve();
+              };
+            });
+          })
+        );
+      }
+    };
+
+    const startLoading = async () => {
+      // Define progressive levels
+      const l1: number[] = [];
+      for (let i = 1; i <= TOTAL_FRAMES; i += 8) l1.push(i);
+      const l2: number[] = [];
+      for (let i = 5; i <= TOTAL_FRAMES; i += 8) l2.push(i);
+      const l3: number[] = [];
+      for (let i = 3; i <= TOTAL_FRAMES; i += 4) l3.push(i);
+      const l4: number[] = [];
+      for (let i = 2; i <= TOTAL_FRAMES; i += 2) l4.push(i);
+
+      // --- Level 1 (Preload - Block UI) ---
+      setTotalBatches(Math.ceil(l1.length / 20));
+      await loadLevel(l1, (pct, batchIdx, total) => {
+        setPreloadProgress(pct);
+        setActiveBatch(batchIdx);
+      });
+
+      if (!active) return;
+
+      // Pass the image array reference to state, revealing the main layout
+      setImages(imagesArray);
+      setIsLoading(false);
+
+      // --- Background Levels (Level 2, 3, 4 - Non-blocking UI) ---
+      const backgroundLevels = [l2, l3, l4];
+      for (const level of backgroundLevels) {
+        if (!active) return;
+        const BG_BATCH_SIZE = 15;
+        for (let i = 0; i < level.length; i += BG_BATCH_SIZE) {
+          if (!active) return;
+          const batch = level.slice(i, i + BG_BATCH_SIZE);
+          await Promise.all(
+            batch.map((index) => {
+              return new Promise<void>((resolve) => {
+                const img = new Image();
+                const frameNum = String(index).padStart(3, "0");
+                img.src = `/frames/frame_${frameNum}.webp`;
+
+                img.onload = () => {
+                  imagesArray[index - 1] = img;
+                  resolve();
+                };
+
+                img.onerror = () => {
+                  imagesArray[index - 1] = img;
+                  resolve();
+                };
+              });
+            })
+          );
+          // Yield to browser main thread between batches to keep the scroll interaction ultra smooth
+          await new Promise((r) => setTimeout(r, 50));
+        }
+      }
+    };
+
+    startLoading();
+
+    return () => {
+      active = false;
+    };
+  }, []);
 
   useEffect(() => {
     if (isLoading) return;
@@ -41,10 +154,9 @@ export default function Home() {
         {isLoading ? (
           <Preloader
             key="preloader"
-            onComplete={(loaded) => {
-              setImages(loaded);
-              setIsLoading(false);
-            }}
+            progress={preloadProgress}
+            activeBatch={activeBatch}
+            totalBatches={totalBatches}
           />
         ) : (
           <motion.div

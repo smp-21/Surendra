@@ -38,21 +38,21 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-12 md:px-16 flex items-center justify-between w-full">
         {/* Left: Brand Logo Container - Pinned to far left */}
-        <div className="flex-1 flex justify-start">
+        <div className="flex-grow sm:flex-1 flex justify-start">
           <a href="/" className="flex flex-col group select-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)] shrink-0 whitespace-nowrap">
             <div className="flex items-baseline gap-2">
-              <span className="text-white font-serif text-lg tracking-[0.18em] uppercase transition-colors duration-300 group-hover:text-bronze font-bold text-shadow-premium leading-none">
+              <span className="text-white font-serif text-sm sm:text-base md:text-lg tracking-[0.18em] uppercase transition-colors duration-300 group-hover:text-bronze font-bold text-shadow-premium leading-none">
                 SURENDRA & CO.
               </span>
             </div>
-            <span className="text-[8px] font-mono text-zinc-300 tracking-[0.25em] uppercase mt-1.5 group-hover:text-white transition-colors duration-300 text-shadow-subtle font-bold leading-none">
+            <span className="text-[6px] sm:text-[7px] md:text-[8px] font-mono text-zinc-300 tracking-[0.2em] sm:tracking-[0.25em] uppercase mt-1.5 group-hover:text-white transition-colors duration-300 text-shadow-subtle font-bold leading-none">
               ESTD. 1984 // MASTER COACHBUILDERS
             </span>
           </a>
         </div>
 
         {/* Center: Desktop Navigation - Perfectly centered and spacious */}
-        <div className="hidden lg:flex items-center justify-center gap-10 font-mono text-[9px] tracking-[0.2em] uppercase font-bold text-zinc-300 text-shadow-subtle flex-1">
+        <div className="hidden xl:flex items-center justify-center gap-6 xl:gap-10 font-mono text-[9px] tracking-[0.2em] uppercase font-bold text-zinc-300 text-shadow-subtle flex-1">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -66,7 +66,7 @@ export default function Navbar() {
         </div>
 
         {/* Right: CTA Button Container - Pinned to far right */}
-        <div className="flex-1 flex justify-end">
+        <div className="hidden sm:flex flex-1 justify-end">
           <a
             href="/commission"
             className="inline-flex items-center justify-center gap-2.5 px-5 py-2.5 rounded-lg border border-white/20 bg-charcoal/45 backdrop-blur-sm hover:border-bronze hover:bg-bronze/10 hover:text-white text-[9px] text-white tracking-[0.25em] font-bold uppercase transition-all duration-500 shadow-xl cursor-pointer font-mono text-shadow-subtle whitespace-nowrap"
@@ -79,7 +79,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden p-2 text-zinc-400 hover:text-white border border-white/[0.1] bg-white/[0.02] transition-all duration-300 rounded-lg cursor-pointer"
+          className="xl:hidden p-2 text-zinc-400 hover:text-white border border-white/[0.1] bg-white/[0.02] transition-all duration-300 rounded-lg cursor-pointer"
           aria-label="Toggle Menu"
         >
           {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -94,7 +94,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25 }}
-            className="lg:hidden absolute top-full left-0 w-full bg-[#070809]/95 backdrop-blur-2xl border-b border-white/[0.08]"
+            className="xl:hidden absolute top-full left-0 w-full bg-[#070809]/95 backdrop-blur-2xl border-b border-white/[0.08]"
           >
             <div className="px-6 py-8 flex flex-col gap-4 font-mono">
               {navLinks.map((link) => (
