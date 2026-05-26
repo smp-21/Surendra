@@ -42,7 +42,7 @@ export default function Preloader({ progress, activeBatch, totalBatches }: Prelo
       {/* Top Header Row */}
       <div className="w-full max-w-7xl flex items-center justify-between border-b border-white/[0.08] pb-6 relative z-10">
         <div className="flex items-center gap-3">
-          <div className="w-2 h-2 bg-bronze animate-pulse rounded-full" />
+          <div className="w-2 h-2 bg-bronze animate-led-flicker rounded-full" />
           <span className="font-mono text-[10px] tracking-[0.25em] text-zinc-400 uppercase font-bold">
             SURENDRA & CO. // INITIALIZING FABRICATION RUNWAY
           </span>

@@ -30,7 +30,7 @@ export default function Footer() {
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 flex items-center gap-6 px-5 py-1 bg-[#070809] border-x border-b border-white/[0.08] font-mono text-[8px] tracking-[0.3em] text-bronze uppercase rounded-b-lg">
         <span>HQ Z-3</span>
-        <span className="w-1.5 h-1.5 rounded-full bg-bronze animate-pulse" />
+        <span className="w-1.5 h-1.5 rounded-full bg-bronze animate-led-flicker" />
         <span>12.9716° N, 77.5946° E</span>
       </div>
 
@@ -54,7 +54,7 @@ export default function Footer() {
 
             <div className="mt-8 lg:mt-16 flex flex-col gap-2.5 font-mono text-[10px] text-zinc-500 tracking-wider">
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-500/80 animate-pulse" />
+                <span className="w-1.5 h-1.5 rounded-full bg-green-500/80 animate-led-flicker" />
                 <span className="text-zinc-400">CENTRAL LEDGER ACTIVE</span>
               </div>
               <span>REG. HQ // STEELWORKS ZONE 3 // IN</span>
@@ -116,18 +116,66 @@ export default function Footer() {
               // COMPLIANCE
             </h4>
             <div className="flex flex-col gap-3 font-mono text-xs text-zinc-400">
-              <a href="#" className="hover:text-bronze transition-colors duration-300 uppercase tracking-wider text-[10px]">
-                Privacy Schemas
+              <a href="/privacy" className="hover:text-bronze transition-colors duration-300 uppercase tracking-wider text-[10px]">
+                Privacy Policy
               </a>
-              <a href="#" className="hover:text-bronze transition-colors duration-300 uppercase tracking-wider text-[10px]">
-                OEM Standards
+              <a href="/cookies" className="hover:text-bronze transition-colors duration-300 uppercase tracking-wider text-[10px]">
+                Cookie Directives
               </a>
-              <a href="#" className="hover:text-bronze transition-colors duration-300 uppercase tracking-wider text-[10px]">
-                Warranties
+              <a href="/terms" className="hover:text-bronze transition-colors duration-300 uppercase tracking-wider text-[10px]">
+                Terms of Engagement
               </a>
-              <a href="#" className="hover:text-bronze transition-colors duration-300 uppercase tracking-wider text-[10px]">
-                B2B Ledger Logs
+              <a href="/compliance" className="hover:text-bronze transition-colors duration-300 uppercase tracking-wider text-[10px]">
+                Regulatory Validation
               </a>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Technical B2B Directory & Site Index Map */}
+        <div className="mt-16 pt-12 border-t border-white/[0.06] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          {/* Section 1: Commercial Hubs */}
+          <div className="flex flex-col gap-4">
+            <h5 className="font-mono text-[9px] text-bronze tracking-[0.25em] uppercase font-bold">// COMMERCIAL DIRECTIVES</h5>
+            <div className="flex flex-col gap-2.5 font-mono text-[10px] text-zinc-400">
+              <a href="/bus-body-builders-india" className="hover:text-white transition-colors duration-300 uppercase tracking-wider">Bus Body Builders India</a>
+              <a href="/bus-hardware-manufacturers" className="hover:text-white transition-colors duration-300 uppercase tracking-wider">Bus Hardware Suppliers</a>
+            </div>
+          </div>
+
+          {/* Section 2: Specialty Engineering */}
+          <div className="flex flex-col gap-4">
+            <h5 className="font-mono text-[9px] text-bronze tracking-[0.25em] uppercase font-bold">// SPECIALIZED BUILDING</h5>
+            <div className="flex flex-col gap-2.5 font-mono text-[10px] text-zinc-400">
+              <a href="/luxury-bus-builders" className="hover:text-white transition-colors duration-300 uppercase tracking-wider">Luxury Coach Customizers</a>
+              <a href="/school-bus-manufacturers" className="hover:text-white transition-colors duration-300 uppercase tracking-wider">High-Security School Buses</a>
+            </div>
+          </div>
+
+          {/* Section 3: Tech Fabrication */}
+          <div className="flex flex-col gap-4">
+            <h5 className="font-mono text-[9px] text-bronze tracking-[0.25em] uppercase font-bold">// WORKSHOP PROCESSES</h5>
+            <div className="flex flex-col gap-2.5 font-mono text-[10px] text-zinc-400">
+              <a href="/bus-body-fabrication" className="hover:text-white transition-colors duration-300 uppercase tracking-wider">Bus Body Fabrication</a>
+              <a href="/custom-bus-interiors" className="hover:text-white transition-colors duration-300 uppercase tracking-wider">Custom Cabin Interiors</a>
+            </div>
+          </div>
+
+          {/* Section 4: Programmatic Local Hubs */}
+          <div className="flex flex-col gap-4">
+            <h5 className="font-mono text-[9px] text-bronze tracking-[0.25em] uppercase font-bold">// REGIONAL DISPATCH</h5>
+            <div className="flex flex-col gap-2.5 font-mono text-[10px] text-zinc-400">
+              <div className="flex flex-wrap gap-x-3 gap-y-1.5">
+                <a href="/bus-body-builders-in-mumbai" className="hover:text-white transition-colors duration-300 uppercase tracking-wider">Mumbai</a>
+                <span className="text-zinc-700">//</span>
+                <a href="/bus-body-builders-in-delhi" className="hover:text-white transition-colors duration-300 uppercase tracking-wider">Delhi NCR</a>
+                <span className="text-zinc-700">//</span>
+                <a href="/bus-body-builders-in-pune" className="hover:text-white transition-colors duration-300 uppercase tracking-wider">Pune</a>
+                <span className="text-zinc-700">//</span>
+                <a href="/bus-body-builders-in-bangalore" className="hover:text-white transition-colors duration-300 uppercase tracking-wider">Bangalore</a>
+              </div>
             </div>
           </div>
 

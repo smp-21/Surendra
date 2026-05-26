@@ -21,7 +21,7 @@ export default function Hero() {
           {/* Bronze Technical Node Badge - Hidden on small screen heights & mobile to prevent vertical collision */}
           <div className="hidden lg:flex hero-top-badge items-center gap-2 sm:gap-3 border border-stone/30 bg-charcoal/85 p-2 sm:p-3 px-4 sm:px-5 backdrop-blur-md shadow-2xl mb-4 sm:mb-6">
             {/* Bronze square node block mimicking the brand marker */}
-            <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-bronze shrink-0 animate-pulse" />
+            <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-bronze shrink-0 animate-led-flicker" />
             <span className="font-mono text-[9px] sm:text-[11px] tracking-[0.15em] text-steel-light uppercase font-bold">
               MASTER COACHBUILDERS
             </span>
@@ -39,9 +39,6 @@ export default function Hero() {
             <span className="text-ivory">MASTER COACHBUILDERS</span>
           </div>
           
-          <p className="max-w-xs sm:max-w-lg text-steel-light text-[9px] sm:text-xs tracking-[0.12em] font-mono uppercase mt-4 sm:mt-6 leading-relaxed text-shadow-subtle">
-            PREMIUM SCROLL-CINEMATIC INDUSTRIAL EXPERIENCE
-          </p>
         </motion.div>
       </div>
 

@@ -28,19 +28,22 @@ body {
   overflow-x: hidden;
 }
 
-/* Premium Scrollbar */
+/* Premium Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-charcoal);
+  background: #030405;
+  border-left: 1px solid rgba(255, 255, 255, 0.03);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-stone);
-  border-radius: 3px;
+  background: linear-gradient(180deg, var(--color-stone) 0%, var(--color-bronze) 100%);
+  border: 2px solid #030405;
+  border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-steel);
+  background: var(--color-bronze);
 }
 
 /* Base interactive transitions */
@@ -125,20 +128,100 @@ html.lenis, html.lenis body {
   pointer-events: none;
 }
 
-/* Custom Silent Roaring Breathing Watermark Effect */
+/* Custom Silent Roaring Breathing Watermark Effect with Continuous Analog Flicker */
 @keyframes silent-roar {
   0%, 100% {
     opacity: 0.015;
     filter: drop-shadow(0 0 5px rgba(163, 144, 115, 0));
   }
+  24% {
+    opacity: 0.024;
+    filter: drop-shadow(0 0 12px rgba(163, 144, 115, 0.04));
+  }
+  26% {
+    opacity: 0.018;
+    filter: drop-shadow(0 0 8px rgba(163, 144, 115, 0.02));
+  }
+  28% {
+    opacity: 0.028;
+    filter: drop-shadow(0 0 14px rgba(163, 144, 115, 0.05));
+  }
   50% {
     opacity: 0.045;
     filter: drop-shadow(0 0 30px rgba(163, 144, 115, 0.12));
   }
+  72% {
+    opacity: 0.022;
+    filter: drop-shadow(0 0 10px rgba(163, 144, 115, 0.03));
+  }
+  74% {
+    opacity: 0.032;
+    filter: drop-shadow(0 0 16px rgba(163, 144, 115, 0.06));
+  }
+  76% {
+    opacity: 0.020;
+    filter: drop-shadow(0 0 9px rgba(163, 144, 115, 0.025));
+  }
 }
 
 .animate-silent-roar {
-  animation: silent-roar 14s ease-in-out infinite;
+  animation: silent-roar 14s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+}
+
+/* Premium Organic Analog LED Indicator Flicker */
+@keyframes led-flicker {
+  0%, 100% {
+    opacity: 1;
+    filter: brightness(1.2);
+  }
+  24% {
+    opacity: 0.8;
+    filter: brightness(1.05);
+  }
+  26% {
+    opacity: 0.95;
+    filter: brightness(1.15);
+  }
+  28% {
+    opacity: 0.45;
+    filter: brightness(0.8);
+  }
+  30% {
+    opacity: 0.9;
+    filter: brightness(1.1);
+  }
+  32% {
+    opacity: 0.75;
+    filter: brightness(0.95);
+  }
+  62% {
+    opacity: 1;
+    filter: brightness(1.2);
+  }
+  64% {
+    opacity: 0.55;
+    filter: brightness(0.85);
+  }
+  66% {
+    opacity: 0.9;
+    filter: brightness(1.1);
+  }
+  80% {
+    opacity: 0.8;
+    filter: brightness(1);
+  }
+  82% {
+    opacity: 0.4;
+    filter: brightness(0.75);
+  }
+  84% {
+    opacity: 0.85;
+    filter: brightness(1.05);
+  }
+}
+
+.animate-led-flicker {
+  animation: led-flicker 6s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
 }
 
 /* Technical node badge vertical collision safety override */
