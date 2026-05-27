@@ -145,7 +145,17 @@ export default function CinematicCanvas({ images }: CinematicCanvasProps) {
         const scrollHeight = containerHeight - window.innerHeight;
         
         const scrollTop = scrollY - absoluteTop;
-        targetProgress = Math.max(0, Math.min(1, scrollTop / scrollHeight));
+        
+        // Delay frame progression until after scrolling past the first viewport (100vh)
+        const viewportHeight = window.innerHeight;
+        const startScroll = viewportHeight;
+        const endScroll = scrollHeight;
+        
+        if (scrollTop <= startScroll) {
+          targetProgress = 0;
+        } else {
+          targetProgress = Math.max(0, Math.min(1, (scrollTop - startScroll) / (endScroll - startScroll)));
+        }
         
         // Smooth lerp: ease currentProgress toward targetProgress
         const delta = targetProgress - currentProgress;

@@ -10,6 +10,39 @@ export default function Hero() {
       id="home" 
       className="relative h-screen w-full flex items-center justify-center p-8 md:p-16 select-none overflow-hidden"
     >
+      {/* Premium Rich Texture Solid Background for First Screen */}
+      <div 
+        className="absolute inset-0 z-0 bg-charcoal pointer-events-none select-none overflow-hidden"
+      >
+        {/* Fine Noise Grain Overlay */}
+        <div className="absolute inset-0 premium-noise pointer-events-none opacity-[0.035] mix-blend-overlay" />
+        
+        {/* Luxury Radial Spotlight Glow - subtle gold-bronze highlighting in center */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(197,180,159,0.12)_0%,rgba(7,8,9,0.3)_50%,transparent_100%)] pointer-events-none" />
+        
+        {/* Technical Blueprint Grid Lines */}
+        <div className="absolute inset-0 tech-grid-lines pointer-events-none opacity-[0.10]" />
+        <div className="absolute inset-0 tech-grid-lines-fine pointer-events-none opacity-[0.06]" />
+
+        {/* Structural Steel Border Lines at Viewport Edges */}
+        <div className="absolute top-0 left-0 w-full h-px bg-stone/30" />
+        <div className="absolute bottom-0 left-0 w-full h-px bg-stone/30" />
+        <div className="absolute top-0 left-0 w-px h-full bg-stone/30" />
+        <div className="absolute top-0 right-0 w-px h-full bg-stone/30" />
+
+        {/* Technical Architectural Crosshairs in the Corners */}
+        <div className="absolute top-8 left-8 w-6 h-6 border-t border-l border-white/[0.08]" />
+        <div className="absolute top-8 right-8 w-6 h-6 border-t border-r border-white/[0.08]" />
+        <div className="absolute bottom-8 left-8 w-6 h-6 border-b border-l border-white/[0.08]" />
+        <div className="absolute bottom-8 right-8 w-6 h-6 border-b border-r border-white/[0.08]" />
+        
+        {/* Precision blueprint "+" marks */}
+        <div className="absolute top-8 left-8 -translate-x-[4px] -translate-y-[4px] font-mono text-[9px] text-bronze/30 font-light pointer-events-none">+</div>
+        <div className="absolute top-8 right-8 translate-x-[4px] -translate-y-[4px] font-mono text-[9px] text-bronze/30 font-light pointer-events-none">+</div>
+        <div className="absolute bottom-8 left-8 -translate-x-[4px] translate-y-[4px] font-mono text-[9px] text-bronze/30 font-light pointer-events-none">+</div>
+        <div className="absolute bottom-8 right-8 translate-x-[4px] translate-y-[4px] font-mono text-[9px] text-bronze/30 font-light pointer-events-none">+</div>
+      </div>
+
       {/* Centered Brand Mark - Elite B2B Identity */}
       <div className="absolute inset-0 flex flex-col items-center justify-center p-8 z-10 pointer-events-none">
         <motion.div
