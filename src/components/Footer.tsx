@@ -28,7 +28,7 @@ export default function Footer() {
 
       {/* Technical Blueprint Accent Line (Top) */}
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 flex items-center gap-6 px-5 py-1 bg-[#070809] border-x border-b border-white/[0.08] font-mono text-[8px] tracking-[0.3em] text-bronze uppercase rounded-b-lg">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 flex items-center gap-6 px-5 py-1 bg-[#070809] border-x border-b border-white/[0.08] font-mono text-[8px] tracking-[0.3em] text-bronze uppercase rounded-none relative tech-hud-brackets">
         <span>HQ Z-3</span>
         <span className="w-1.5 h-1.5 rounded-full bg-bronze animate-led-flicker" />
         <span>12.9716° N, 77.5946° E</span>
@@ -202,12 +202,12 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-6">
-            <span className="hidden lg:inline text-zinc-600 uppercase tracking-[0.2em]">
-              ESTD. 1984 // MASTER COACHBUILDERS
+            <span className="hidden lg:inline text-zinc-600 uppercase tracking-[0.25em]">
+              ESTD. 1984 &nbsp;|&nbsp; MASTER COACHBUILDERS
             </span>
             <button
               onClick={handleScrollTop}
-              className="flex items-center gap-2 px-4 py-2 border border-white/[0.1] bg-white/[0.02] hover:border-bronze hover:bg-bronze/5 hover:text-white transition-all duration-500 group select-none uppercase tracking-[0.2em] rounded-lg text-[9px] cursor-pointer font-bold"
+              className="flex items-center gap-2 px-4 py-2 border border-white/[0.08] bg-white/[0.01] hover:border-bronze hover:bg-bronze/5 hover:text-white transition-all duration-500 group select-none uppercase tracking-[0.2em] rounded-none text-[9px] cursor-pointer font-bold relative tech-hud-brackets"
             >
               <span>Return to Top</span>
               <ArrowUp className="w-3 h-3 text-zinc-400 group-hover:text-bronze transition-transform duration-300 group-hover:-translate-y-0.5" />

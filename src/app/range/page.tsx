@@ -46,7 +46,7 @@ export default function RangePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.15 * idx }}
-                className="border border-stone/30 bg-charcoal/50 backdrop-blur-md p-8 md:p-10 rounded-2xl group hover:border-bronze/40 hover:bg-charcoal/60 transition-all duration-500 shadow-lg"
+                className="border border-white/[0.08] bg-charcoal/65 backdrop-blur-md p-8 md:p-10 rounded-[4px] group hover:border-bronze/40 hover:bg-[#070809]/80 transition-all duration-500 shadow-lg relative tech-hud-brackets"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   <div>

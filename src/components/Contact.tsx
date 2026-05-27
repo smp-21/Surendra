@@ -147,7 +147,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-10%" }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="bg-charcoal/45 border border-white/[0.12] backdrop-blur-xl p-5 sm:p-8 md:p-12 w-full max-w-2xl mx-auto rounded-[24px] shadow-2xl transition-all duration-500 hover:border-bronze/60 hover:bg-charcoal/55 hover:shadow-[0_20px_50px_rgba(163,144,115,0.15)]"
+          className="bg-charcoal/65 border border-white/[0.08] backdrop-blur-xl p-6 sm:p-10 md:p-12 w-full max-w-2xl mx-auto rounded-[6px] shadow-2xl transition-all duration-500 hover:border-bronze/40 hover:bg-[#070809]/80 hover:shadow-[0_20px_50px_rgba(197,180,159,0.05)] relative tech-hud-brackets"
         >
           <AnimatePresence mode="wait">
             {submitStatus !== "success" ? (
@@ -183,10 +183,10 @@ export default function Contact() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className={`bg-stone/5 border focus:outline-none p-3 px-4 text-xs font-mono text-white rounded-xl transition-all duration-300 ${
+                    className={`bg-stone/5 border focus:outline-none p-3 px-4 text-xs font-mono text-white rounded-[4px] transition-all duration-300 ${
                       errors.name 
                         ? "border-bronze-dark/60 focus:border-bronze focus:ring-1 focus:ring-bronze/20" 
-                        : "border-white/[0.12] focus:border-bronze focus:ring-1 focus:ring-bronze/20"
+                        : "border-white/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20"
                     }`}
                     placeholder="e.g. Johnathan Miller"
                   />
@@ -204,10 +204,10 @@ export default function Contact() {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className={`bg-stone/5 border focus:outline-none p-3 px-4 text-xs font-mono text-white rounded-xl transition-all duration-300 ${
+                      className={`bg-stone/5 border focus:outline-none p-3 px-4 text-xs font-mono text-white rounded-[4px] transition-all duration-300 ${
                         errors.email 
                           ? "border-bronze-dark/60 focus:border-bronze focus:ring-1 focus:ring-bronze/20" 
-                          : "border-white/[0.12] focus:border-bronze focus:ring-1 focus:ring-bronze/20"
+                          : "border-white/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20"
                       }`}
                       placeholder="officer@company.com"
                     />
@@ -223,10 +223,10 @@ export default function Contact() {
                       required
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className={`bg-stone/5 border focus:outline-none p-3 px-4 text-xs font-mono text-white rounded-xl transition-all duration-300 ${
+                      className={`bg-stone/5 border focus:outline-none p-3 px-4 text-xs font-mono text-white rounded-[4px] transition-all duration-300 ${
                         errors.phone 
                           ? "border-bronze-dark/60 focus:border-bronze focus:ring-1 focus:ring-bronze/20" 
-                          : "border-white/[0.12] focus:border-bronze focus:ring-1 focus:ring-bronze/20"
+                          : "border-white/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20"
                       }`}
                       placeholder="+91 98455 51984"
                     />
@@ -242,7 +242,7 @@ export default function Contact() {
                     <select
                       value={formData.coachType}
                       onChange={(e) => setFormData({ ...formData, coachType: e.target.value })}
-                      className="w-full bg-charcoal border border-white/[0.12] focus:border-bronze focus:ring-1 focus:ring-bronze/20 focus:outline-none p-3 px-4 text-xs font-mono text-white rounded-xl appearance-none cursor-pointer text-ellipsis overflow-hidden font-bold"
+                      className="w-full bg-charcoal border border-white/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20 focus:outline-none p-3 px-4 text-xs font-mono text-white rounded-[4px] appearance-none cursor-pointer text-ellipsis overflow-hidden font-bold"
                     >
                       {COACH_RANGE.map((coach) => (
                         <option key={coach.id} value={coach.id}>
@@ -265,19 +265,19 @@ export default function Contact() {
                     rows={4}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="bg-stone/5 border border-white/[0.12] focus:border-bronze focus:ring-1 focus:ring-bronze/20 focus:outline-none p-3 px-4 text-xs font-mono text-white rounded-xl resize-none transition-all duration-300"
+                    className="bg-stone/5 border border-white/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20 focus:outline-none p-3 px-4 text-xs font-mono text-white rounded-[4px] resize-none transition-all duration-300"
                     placeholder="Outline your payload configurations, routes, seating, or frame requirements..."
                   />
                 </div>
 
                 {/* Row 5: Mathematical Precision Challenge (Quiet Luxury Inline CAPTCHA) */}
-                <div className="flex flex-col gap-1.5 border border-white/[0.08] bg-[#0c0d0f]/50 p-4 rounded-xl">
+                <div className="flex flex-col gap-1.5 border border-white/[0.08] bg-[#0c0d0f]/50 p-4 rounded-none relative tech-hud-brackets">
                   <label className="font-mono text-[9px] tracking-widest text-zinc-300 uppercase flex justify-between font-bold">
                     <span>Precision Validation *</span>
                     {errors.captcha && <span className="text-bronze font-bold">CALCULATION ERROR</span>}
                   </label>
                   <div className="flex items-center gap-4 mt-1">
-                    <div className="bg-stone/5 border border-white/[0.12] p-2.5 px-4 rounded-lg font-mono text-sm text-bronze font-bold select-none whitespace-nowrap">
+                    <div className="bg-stone/5 border border-white/[0.08] p-2.5 px-4 rounded-none font-mono text-sm text-bronze font-bold select-none whitespace-nowrap">
                       {num1} + {num2} =
                     </div>
                     <input
@@ -285,10 +285,10 @@ export default function Contact() {
                       required
                       value={formData.captchaAnswer}
                       onChange={(e) => setFormData({ ...formData, captchaAnswer: e.target.value })}
-                      className={`w-full bg-stone/5 border focus:outline-none p-2.5 px-4 text-xs font-mono text-white rounded-lg transition-all duration-300 ${
+                      className={`w-full bg-stone/5 border focus:outline-none p-2.5 px-4 text-xs font-mono text-white rounded-[4px] transition-all duration-300 ${
                         errors.captcha 
                           ? "border-bronze-dark/60 focus:border-bronze focus:ring-1 focus:ring-bronze/20" 
-                          : "border-white/[0.12] focus:border-bronze focus:ring-1 focus:ring-bronze/20"
+                          : "border-white/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20"
                       }`}
                       placeholder="Enter verification sum..."
                     />
@@ -300,7 +300,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full flex items-center justify-center gap-2 p-3.5 border border-bronze bg-bronze/5 hover:bg-bronze hover:text-charcoal font-mono text-xs font-bold tracking-widest uppercase transition-all duration-300 disabled:opacity-50 select-none cursor-pointer text-white rounded-xl"
+                    className="w-full flex items-center justify-center gap-2 p-3.5 border border-bronze bg-bronze/5 hover:bg-bronze hover:text-charcoal font-mono text-xs font-bold tracking-widest uppercase transition-all duration-300 disabled:opacity-50 select-none cursor-pointer text-white rounded-none relative tech-hud-brackets"
                   >
                     <span>{isSubmitting ? "PROCESSING BUILD SPEC..." : "SUBMIT BUILD REQUEST"}</span>
                     <Send className="w-3.5 h-3.5" />
@@ -313,7 +313,7 @@ export default function Contact() {
                         initial={{ opacity: 0, y: -4 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0 }}
-                        className="flex items-center gap-2 border border-bronze-dark/30 bg-bronze-dark/5 p-2.5 px-3.5 font-mono text-[9px] text-bronze font-bold rounded-lg"
+                        className="flex items-center gap-2 border border-bronze-dark/30 bg-bronze-dark/5 p-2.5 px-3.5 font-mono text-[9px] text-bronze font-bold rounded-none"
                       >
                         <AlertTriangle className="w-3.5 h-3.5 text-bronze shrink-0 animate-led-flicker" />
                         <span>{apiErrorMessage || "Submission failed... Please verify the highlighted fields above."}</span>

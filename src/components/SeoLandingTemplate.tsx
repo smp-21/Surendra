@@ -83,8 +83,8 @@ export default function SeoLandingTemplate({
             </p>
           </div>
 
-          {/* Specification Brief Indicator HUD */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 bg-white/[0.01] border border-white/[0.06] p-6 rounded-2xl backdrop-blur-md">
+          {/* Specification Brief Indicator HUD - Liquid Platinum / Titanium */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 bg-white/[0.01] border border-white/[0.08] p-6 rounded-none relative tech-hud-brackets backdrop-blur-md">
             <div className="flex items-start gap-3">
               <FileText className="w-5 h-5 text-bronze shrink-0 mt-0.5" />
               <div className="flex flex-col gap-1 font-mono text-[10px]">
@@ -121,7 +121,7 @@ export default function SeoLandingTemplate({
 
             {/* Right Side: Specifications Matrix */}
             <div className="lg:col-span-4 sticky top-32 flex flex-col gap-8">
-              <div className="border border-white/[0.08] bg-[#0c0d0f] rounded-2xl p-6 shadow-xl relative overflow-hidden">
+              <div className="border border-white/[0.08] bg-[#0c0d0f] rounded-none p-6 shadow-xl relative overflow-hidden tech-hud-brackets">
                 <div className="absolute inset-0 tech-grid-lines pointer-events-none opacity-[0.03]" />
                 <h3 className="font-mono text-[10px] text-bronze tracking-[0.25em] uppercase font-bold mb-6 flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-bronze animate-led-flicker rounded-full" />
@@ -139,7 +139,7 @@ export default function SeoLandingTemplate({
 
                 <a
                   href="/commission"
-                  className="mt-8 w-full inline-flex items-center justify-center gap-2 p-3.5 border border-bronze bg-bronze/5 hover:bg-bronze hover:text-charcoal font-mono text-[10px] font-bold tracking-widest uppercase transition-all duration-300 rounded-xl text-center text-white"
+                  className="mt-8 w-full inline-flex items-center justify-center gap-2 p-3.5 border border-bronze bg-bronze/5 hover:bg-bronze hover:text-charcoal font-mono text-[10px] font-bold tracking-widest uppercase transition-all duration-300 rounded-none relative tech-hud-brackets text-center text-white"
                 >
                   <span>REQUEST DRAWINGS</span>
                 </a>
@@ -165,7 +165,7 @@ export default function SeoLandingTemplate({
                 return (
                   <div
                     key={idx}
-                    className="border border-white/[0.08] bg-[#0c0d0f]/50 hover:bg-[#0c0d0f] rounded-xl overflow-hidden transition-colors duration-300"
+                    className="border border-white/[0.08] bg-[#0c0d0f]/30 hover:bg-[#0c0d0f]/60 rounded-none overflow-hidden transition-colors duration-300"
                   >
                     <button
                       onClick={() => toggleFaq(idx)}
@@ -192,7 +192,7 @@ export default function SeoLandingTemplate({
           </div>
 
           {/* Final Industrial CTA Section */}
-          <div className="border border-bronze/30 bg-gradient-to-r from-bronze/[0.02] via-charcoal to-bronze/[0.02] rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden shadow-2xl">
+          <div className="border border-white/[0.08] bg-charcoal/80 rounded-none p-8 sm:p-12 text-center relative overflow-hidden shadow-2xl tech-hud-brackets">
             <div className="absolute inset-0 tech-grid-lines pointer-events-none opacity-[0.05]" />
             <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wider text-white uppercase mb-4">
               Commence Your Custom Chassis Formulation
@@ -202,7 +202,7 @@ export default function SeoLandingTemplate({
             </p>
             <a
               href="/commission"
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-bronze bg-[#070809]/95 text-white hover:bg-bronze hover:text-[#070809] text-xs tracking-[0.25em] font-bold uppercase transition-all duration-500 rounded-full cursor-pointer shadow-2xl hover:shadow-bronze/20"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-bronze bg-[#070809]/95 text-white hover:bg-bronze hover:text-[#070809] text-xs tracking-[0.25em] font-bold uppercase transition-all duration-500 rounded-none relative tech-hud-brackets cursor-pointer shadow-2xl"
             >
               <span>BESPOKE REQUISITION</span>
               <span className="font-mono text-[9px] tracking-widest">// FORGE SYSTEM</span>

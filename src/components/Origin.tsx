@@ -16,17 +16,17 @@ export default function Origin() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-20%" }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="bg-charcoal/45 border border-white/[0.12] backdrop-blur-xl p-5 sm:p-8 lg:p-10 w-fit max-w-[90vw] sm:max-w-xl md:max-w-2xl lg:max-w-3xl rounded-[24px] shadow-2xl transition-all duration-500 group-hover:border-bronze/60 group-hover:bg-charcoal/55 group-hover:shadow-[0_20px_50px_rgba(163,144,115,0.15)]"
+          className="bg-charcoal/65 border border-white/[0.08] backdrop-blur-xl p-6 sm:p-10 lg:p-12 w-fit max-w-[90vw] sm:max-w-xl md:max-w-2xl lg:max-w-3xl rounded-[4px] shadow-2xl transition-all duration-500 group-hover:border-bronze/40 group-hover:bg-[#070809]/80 group-hover:shadow-[0_20px_50px_rgba(197,180,159,0.05)] relative tech-hud-brackets"
         >
-          <div className="flex items-center justify-between gap-8 mb-3">
-            <span className="font-mono text-[10px] sm:text-xs tracking-[0.15em] text-bronze uppercase font-semibold block">
+          <div className="flex items-center justify-between gap-8 mb-4">
+            <span className="font-mono text-[9px] sm:text-[10px] tracking-[0.2em] text-bronze uppercase font-bold block">
               Est. 1984
             </span>
-            <span className="font-mono text-[9px] text-zinc-500 group-hover:text-bronze tracking-[0.15em] transition-colors duration-300 uppercase">
+            <span className="font-mono text-[9px] text-zinc-500 group-hover:text-bronze tracking-[0.2em] transition-colors duration-300 uppercase">
               Explore →
             </span>
           </div>
-          <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-[0.04em] uppercase text-white leading-[0.95] mb-2 sm:mb-3 group-hover:text-bronze transition-colors duration-300">
+          <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-[0.04em] uppercase text-white leading-[0.95] mb-3 sm:mb-4 group-hover:text-bronze transition-colors duration-300">
             Heritage
           </h2>
           <p className="text-zinc-200 text-sm sm:text-base md:text-lg lg:text-xl font-light tracking-wide leading-relaxed">

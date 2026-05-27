@@ -18,11 +18,11 @@ export default function Hero() {
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="flex flex-col items-center text-center max-w-4xl"
         >
-          {/* Bronze Technical Node Badge - Hidden on small screen heights & mobile to prevent vertical collision */}
-          <div className="hidden lg:flex hero-top-badge items-center gap-2 sm:gap-3 border border-stone/30 bg-charcoal/85 p-2 sm:p-3 px-4 sm:px-5 backdrop-blur-md shadow-2xl mb-4 sm:mb-6">
-            {/* Bronze square node block mimicking the brand marker */}
-            <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-bronze shrink-0 animate-led-flicker" />
-            <span className="font-mono text-[9px] sm:text-[11px] tracking-[0.15em] text-steel-light uppercase font-bold">
+          {/* Premium Titanium Technical Badge - High Precision HUD */}
+          <div className="hidden lg:flex hero-top-badge items-center gap-3 border border-white/[0.08] bg-charcoal/80 p-2 px-5 backdrop-blur-md shadow-2xl mb-5 sm:mb-6 rounded-none relative tech-hud-brackets">
+            {/* Liquid Platinum active indicator LED */}
+            <div className="w-1.5 h-1.5 bg-white/95 rounded-full shrink-0 animate-led-flicker" />
+            <span className="font-mono text-[9px] sm:text-[10px] tracking-[0.25em] text-zinc-300 uppercase font-bold">
               MASTER COACHBUILDERS
             </span>
           </div>
@@ -32,11 +32,11 @@ export default function Hero() {
             SURENDRA & CO.
           </h1>
           
-          {/* Sub-Tagline matching the exact image text - Elevated for 100% Visibility */}
-          <div className="flex items-center justify-center gap-2 sm:gap-4 font-mono text-[9px] sm:text-xs md:text-sm tracking-[0.1em] sm:tracking-[0.15em] uppercase font-bold bg-charcoal/45 border border-stone/40 px-4 sm:px-6 py-2 sm:py-3 backdrop-blur-xl shadow-[0_15px_30px_rgba(0,0,0,0.85)] mt-2 sm:mt-3 max-w-[90vw] sm:max-w-none flex-wrap select-text rounded-lg">
+          {/* Re-engineered Editorial Tagline Division - Sandblasted Titanium & Liquid Platinum */}
+          <div className="flex items-center justify-center gap-3 sm:gap-5 font-mono text-[9px] sm:text-xs md:text-sm tracking-[0.2em] sm:tracking-[0.28em] uppercase font-bold bg-[#070809]/80 border border-white/[0.08] px-5 sm:px-8 py-2.5 sm:py-3.5 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.95)] mt-3 sm:mt-4 max-w-[90vw] sm:max-w-none flex-wrap select-text rounded-none relative tech-hud-brackets">
             <span className="text-bronze">ESTD. 1984</span>
-            <span className="text-stone/50">/</span>
-            <span className="text-ivory">MASTER COACHBUILDERS</span>
+            <span className="text-white/20 font-light">|</span>
+            <span className="text-white">MASTER COACHBUILDERS</span>
           </div>
           
         </motion.div>

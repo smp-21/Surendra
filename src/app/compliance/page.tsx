@@ -46,7 +46,7 @@ export default function CompliancePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 * idx }}
-                className="border border-stone/30 bg-charcoal/50 backdrop-blur-md p-8 flex flex-col rounded-2xl group hover:border-bronze/40 hover:bg-charcoal/60 transition-all duration-500 shadow-lg"
+                className="border border-white/[0.08] bg-charcoal/65 backdrop-blur-md p-8 flex flex-col rounded-[4px] group hover:border-bronze/40 hover:bg-[#070809]/80 transition-all duration-500 shadow-lg relative tech-hud-brackets"
               >
                 <div className="flex items-start justify-between mb-4">
                   <span className="font-mono text-bronze text-lg font-bold tracking-wider">

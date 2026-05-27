@@ -27,11 +27,11 @@ export default function Preloader({ progress, activeBatch, totalBatches }: Prelo
 
   return (
     <div className="fixed inset-0 z-[100] flex flex-col items-center justify-between bg-[#070809] text-ivory p-8 md:p-16 select-none overflow-hidden">
-      {/* Dynamic Laser Coordinate Scanner Line */}
+      {/* Dynamic Laser Coordinate Scanner Line - Liquid Platinum */}
       <motion.div 
         animate={{ y: ["0vh", "100vh"] }}
         transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-        className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-bronze/40 to-transparent pointer-events-none z-20 shadow-[0_0_8px_#a39073]"
+        className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-white/45 to-transparent pointer-events-none z-20 shadow-[0_0_8px_rgba(255,255,255,0.3)]"
       />
 
       {/* Structural Tech Grid Lines */}
@@ -42,9 +42,9 @@ export default function Preloader({ progress, activeBatch, totalBatches }: Prelo
       {/* Top Header Row */}
       <div className="w-full max-w-7xl flex items-center justify-between border-b border-white/[0.08] pb-6 relative z-10">
         <div className="flex items-center gap-3">
-          <div className="w-2 h-2 bg-bronze animate-led-flicker rounded-full" />
+          <div className="w-1.5 h-1.5 bg-white animate-led-flicker rounded-full" />
           <span className="font-mono text-[10px] tracking-[0.25em] text-zinc-400 uppercase font-bold">
-            SURENDRA & CO. // INITIALIZING FABRICATION RUNWAY
+            SURENDRA & CO. &nbsp;|&nbsp; INITIALIZING FABRICATION RUNWAY
           </span>
         </div>
         <div className="hidden sm:flex items-center gap-6 font-mono text-[10px] text-zinc-400">

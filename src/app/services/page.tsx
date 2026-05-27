@@ -46,7 +46,7 @@ export default function ServicesPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.15 * idx }}
-                className="border border-stone/30 bg-charcoal/50 backdrop-blur-md p-8 flex flex-col justify-between rounded-2xl group hover:border-bronze/40 hover:bg-charcoal/60 transition-all duration-500 min-h-[360px] shadow-lg"
+                className="border border-white/[0.08] bg-charcoal/65 backdrop-blur-md p-8 flex flex-col justify-between rounded-[4px] group hover:border-bronze/40 hover:bg-[#070809]/80 transition-all duration-500 min-h-[360px] shadow-lg relative tech-hud-brackets"
               >
                 <div>
                   <span className="font-mono text-[9px] tracking-[0.25em] text-bronze uppercase font-bold mb-2 block">
@@ -75,7 +75,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-16 border border-stone/30 bg-charcoal/50 backdrop-blur-md p-8 md:p-12 rounded-2xl shadow-lg"
+            className="mt-16 border border-white/[0.08] bg-charcoal/65 backdrop-blur-md p-8 md:p-12 rounded-[6px] shadow-lg relative tech-hud-brackets"
           >
             <h3 className="font-serif text-2xl font-light text-bronze tracking-wide mb-4">
               Engineering <span className="italic text-white font-light">Validation Standards</span>

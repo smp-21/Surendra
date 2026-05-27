@@ -71,7 +71,7 @@ export default function HeritagePage() {
               {ORIGIN_COPY.stats.map((stat, idx) => (
                 <div 
                   key={stat.label} 
-                  className="border border-stone/30 bg-charcoal/50 backdrop-blur-md p-8 rounded-2xl group hover:border-bronze/40 hover:bg-charcoal/60 transition-all duration-500 shadow-lg"
+                  className="border border-white/[0.08] bg-charcoal/65 backdrop-blur-md p-8 rounded-[4px] group hover:border-bronze/40 hover:bg-[#070809]/80 transition-all duration-500 shadow-lg relative tech-hud-brackets"
                 >
                   <div className="flex items-center justify-between mb-3">
                     <span className="font-serif text-4xl sm:text-5xl font-light text-bronze tracking-wide">

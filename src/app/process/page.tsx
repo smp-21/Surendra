@@ -63,12 +63,12 @@ export default function ProcessPage() {
                 transition={{ duration: 0.8, delay: 0.2 + idx * 0.15 }}
                 className="relative pl-10 md:pl-14 group"
               >
-                {/* Timeline Node */}
-                <div className="absolute -left-[7px] top-1 w-3.5 h-3.5 bg-charcoal border-2 border-stone/40 group-hover:border-bronze rounded-full transition-colors duration-500 flex items-center justify-center">
-                  <div className="w-1.5 h-1.5 bg-stone/30 group-hover:bg-bronze rounded-full transition-colors" />
+                {/* Precision engineering node block */}
+                <div className="absolute -left-[5px] top-2.5 w-2.5 h-2.5 bg-charcoal border border-white/[0.12] group-hover:border-bronze transition-colors duration-500 flex items-center justify-center">
+                  <div className="w-1 h-1 bg-white/20 group-hover:bg-bronze transition-colors" />
                 </div>
 
-                <div className="border border-stone/30 bg-charcoal/50 backdrop-blur-md p-8 rounded-2xl group-hover:border-bronze/40 hover:bg-charcoal/60 transition-all duration-500 shadow-lg">
+                <div className="border border-white/[0.08] bg-charcoal/65 backdrop-blur-md p-8 rounded-[4px] group-hover:border-bronze/40 hover:bg-[#070809]/80 transition-all duration-500 shadow-lg relative tech-hud-brackets">
                   <div className="flex items-baseline gap-4 mb-3">
                     <span className="font-mono text-bronze text-2xl font-bold tracking-wider">
                       {step.step}

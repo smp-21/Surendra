@@ -45,8 +45,8 @@ export default function Navbar() {
                 SURENDRA & CO.
               </span>
             </div>
-            <span className="text-[6px] sm:text-[7px] md:text-[8px] font-mono text-zinc-300 tracking-[0.2em] sm:tracking-[0.25em] uppercase mt-1.5 group-hover:text-white transition-colors duration-300 text-shadow-subtle font-bold leading-none">
-              ESTD. 1984 // MASTER COACHBUILDERS
+            <span className="text-[6px] sm:text-[7px] md:text-[8px] font-mono text-zinc-400 tracking-[0.22em] sm:tracking-[0.26em] uppercase mt-1.5 group-hover:text-white transition-colors duration-300 text-shadow-subtle font-bold leading-none">
+              ESTD. 1984 &nbsp;|&nbsp; MASTER COACHBUILDERS
             </span>
           </a>
         </div>
@@ -69,7 +69,7 @@ export default function Navbar() {
         <div className="hidden sm:flex flex-1 justify-end">
           <a
             href="/commission"
-            className="inline-flex items-center justify-center gap-2.5 px-5 py-2.5 rounded-lg border border-white/20 bg-charcoal/45 backdrop-blur-sm hover:border-bronze hover:bg-bronze/10 hover:text-white text-[9px] text-white tracking-[0.25em] font-bold uppercase transition-all duration-500 shadow-xl cursor-pointer font-mono text-shadow-subtle whitespace-nowrap"
+            className="inline-flex items-center justify-center gap-2.5 px-5 py-2.5 rounded-none border border-white/[0.12] bg-charcoal/70 backdrop-blur-sm hover:border-bronze hover:bg-bronze/5 hover:text-white text-[9px] text-white tracking-[0.25em] font-bold uppercase transition-all duration-500 shadow-xl cursor-pointer font-mono text-shadow-subtle whitespace-nowrap relative tech-hud-brackets"
           >
             <span>Bespoke Commission</span>
             <Mail className="w-3 h-3 text-zinc-350 group-hover:text-bronze transition-colors duration-300" />
@@ -111,7 +111,7 @@ export default function Navbar() {
               <a
                 href="/commission"
                 onClick={() => setIsOpen(false)}
-                className="mt-6 w-full flex items-center justify-center gap-2 py-3.5 border border-bronze bg-bronze/5 text-center text-[10px] font-bold tracking-[0.2em] text-white hover:bg-bronze hover:text-[#070809] transition-all duration-500 rounded-lg uppercase"
+                className="mt-6 w-full flex items-center justify-center gap-2 py-3.5 border border-bronze bg-bronze/5 text-center text-[10px] font-bold tracking-[0.2em] text-white hover:bg-bronze hover:text-[#070809] transition-all duration-500 rounded-none relative tech-hud-brackets uppercase"
               >
                 <span>Bespoke Commission</span>
                 <Mail className="w-3.5 h-3.5" />
