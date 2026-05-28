@@ -46,9 +46,9 @@ export default function Hero() {
       {/* Centered Brand Mark - Elite B2B Identity */}
       <div className="absolute inset-0 flex flex-col items-center justify-center p-8 z-10 pointer-events-none">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="flex flex-col items-center text-center max-w-4xl"
         >
           {/* Premium Titanium Technical Badge - High Precision HUD */}

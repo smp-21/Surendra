@@ -70,8 +70,9 @@ export default function HomeClient() {
 
     const startLoading = async () => {
       // Define progressive levels
-      const l1: number[] = [];
-      for (let i = 1; i <= TOTAL_FRAMES; i += 8) l1.push(i);
+      const l0: number[] = [1, 2, 3, 4, 5]; // Blocker preloader frames - extremely fast!
+      const l1_rest: number[] = [];
+      for (let i = 9; i <= TOTAL_FRAMES; i += 8) l1_rest.push(i);
       const l2: number[] = [];
       for (let i = 5; i <= TOTAL_FRAMES; i += 8) l2.push(i);
       const l3: number[] = [];
@@ -79,16 +80,16 @@ export default function HomeClient() {
       const l4: number[] = [];
       for (let i = 2; i <= TOTAL_FRAMES; i += 2) l4.push(i);
 
-      // --- Level 1 (Preload - Block UI with Enforced 1.9s Minimum Duration) ---
-      setTotalBatches(Math.ceil(l1.length / 20));
+      // --- Level 0 (Preload - Block UI with snappier 400ms duration) ---
+      setTotalBatches(1);
       
       let actualPct = 0;
       let currentVisual = 0;
       const startTime = Date.now();
-      const minDuration = 1900; // Enforce minimum 1.9 seconds loading time
+      const minDuration = 400; // Snappier preload for better FCP/LCP
 
       // Start actual load in the background
-      const loadPromise = loadLevel(l1, (pct, batchIdx, total) => {
+      const loadPromise = loadLevel(l0, (pct, batchIdx, total) => {
         actualPct = pct;
         setActiveBatch(batchIdx);
       });
@@ -127,8 +128,11 @@ export default function HomeClient() {
       setImages(imagesArray);
       setIsLoading(false);
 
-      // --- Background Levels (Level 2, 3, 4 - Non-blocking UI) ---
-      const backgroundLevels = [l2, l3, l4];
+      // Delay background loading by 1.5 seconds to let the Hero component render and animate smoothly
+      await new Promise((r) => setTimeout(r, 1500));
+
+      // --- Background Levels (Level 1 Rest, Level 2, 3, 4 - Non-blocking UI) ---
+      const backgroundLevels = [l1_rest, l2, l3, l4];
       for (const level of backgroundLevels) {
         if (!active) return;
         const BG_BATCH_SIZE = 15;
@@ -154,8 +158,8 @@ export default function HomeClient() {
               });
             })
           );
-          // Yield to browser main thread between batches to keep the scroll interaction ultra smooth
-          await new Promise((r) => setTimeout(r, 50));
+          // Yield to browser main thread between batches to keep the scroll interaction ultra smooth (increased to 120ms to reduce TBT)
+          await new Promise((r) => setTimeout(r, 120));
         }
       }
     };
@@ -198,7 +202,7 @@ export default function HomeClient() {
             key="content"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className="relative flex flex-col"
           >
             {/* Global Navigation */}

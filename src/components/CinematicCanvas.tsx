@@ -11,6 +11,7 @@ export default function CinematicCanvas({ images }: CinematicCanvasProps) {
   const animationRef = useRef<number | null>(null);
   const lastFrameIndexRef = useRef<number>(-1);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [canvasScrollProgress, setCanvasScrollProgress] = useState(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -101,12 +102,22 @@ export default function CinematicCanvas({ images }: CinematicCanvasProps) {
       let offsetX = 0;
       let offsetY = 0;
 
-      if (canvasRatio > imgRatio) {
+      const isMobile = window.innerWidth < 768;
+
+      if (isMobile) {
+        // "contain" image behavior (fit to width instead of height)
+        drawWidth = canvasWidth;
         drawHeight = canvasWidth / imgRatio;
+        offsetX = 0;
         offsetY = (canvasHeight - drawHeight) / 2;
       } else {
-        drawWidth = canvasHeight * imgRatio;
-        offsetX = (canvasWidth - drawWidth) / 2;
+        if (canvasRatio > imgRatio) {
+          drawHeight = canvasWidth / imgRatio;
+          offsetY = (canvasHeight - drawHeight) / 2;
+        } else {
+          drawWidth = canvasHeight * imgRatio;
+          offsetX = (canvasWidth - drawWidth) / 2;
+        }
       }
 
       // Premium Cinematic Zoom Effect (slowly zooms out from 1.04 to 1.00)
@@ -167,6 +178,9 @@ export default function CinematicCanvas({ images }: CinematicCanvasProps) {
         
         setScrollProgress(currentProgress);
         drawFrame(currentProgress);
+
+        const overallProgress = Math.max(0, Math.min(1, scrollTop / (scrollHeight || 1)));
+        setCanvasScrollProgress(overallProgress);
       }
       animationRef.current = requestAnimationFrame(tick);
     };
@@ -206,6 +220,17 @@ export default function CinematicCanvas({ images }: CinematicCanvasProps) {
       <div className="absolute bottom-0 left-0 w-full h-px bg-stone/20" />
       <div className="absolute top-0 left-0 w-px h-full bg-stone/20" />
       <div className="absolute top-0 right-0 w-px h-full bg-stone/20" />
+
+      {/* Scroll Progress Bar at the bottom of the canvas viewport */}
+      <div 
+        className="absolute bottom-0 left-0 w-full bg-charcoal/40 border-t border-white/[0.06] pointer-events-none z-30" 
+        style={{ height: "8px" }}
+      >
+        <div 
+          className="h-full bg-gradient-to-r from-bronze/80 via-bronze to-bronze/90 transition-all duration-75 ease-out" 
+          style={{ width: `${canvasScrollProgress * 100}%` }}
+        />
+      </div>
 
     </div>
   );
