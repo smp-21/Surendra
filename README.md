@@ -1,55 +1,53 @@
-# Surendra & Co. — Premium Coachbuilding Website
+# Surendra & Co. — Master Coachbuilders (Estd. 1984)
 
-A premium corporate website built for **Surendra & Co.**, designed with a sleek, minimalist industrial luxury aesthetic.
+Surendra & Co. is an industry-leading B2B coachbuilder and structural chassis manufacturer. For over four decades, our workshops have forged heavy-duty passenger vehicles, intercity cruisers, and custom-cladded transit systems that define durability, structural integrity, and passenger safety.
 
 ---
 
-## 🏛 The Vision: Engineering Trust
+## 🚌 Our Core Products & Vehicles
 
-Surendra & Co. represents decades of engineering excellence, precision manufacturing, and master coachbuilding. This website is designed to be a cinematic, editorial digital showcase that mirrors the premium, durable, and reliable quality of our physical vehicles.
+- **Volvo 9600 XL (Elite Intercity Cruiser):** Flagship long-haul luxury coach transport designed with aerodynamic composite structures and customized multi-zone cabin suspension.
+- **Volvo B7R Platform (Heavy Duty Road Chassis):** High-torsion rigid chassis workhorse engineered with cold-rolled steel box beams for demanding intercity routes.
+- **Premium Seater (Luxury Executive Travel):** Bespoke transporters customized with executive leather recliners, advanced climate zone management, and custom soundproofing.
+- **Institutional Bus (Mass High-Security Transit):** Safety-engineered transport chassis for school and corporate fleets, fully compliant with national safety directives and roll-over protection cages.
 
-### Brand Pillars
-- **Durable Elegance:** The design avoids distracting, flashy decorations. Instead, it utilizes structured grids, thin architectural borders, and generous breathing room to make the content feel solid and premium.
-- **Quiet Luxury:** A carefully curated, understated color scheme of charcoal, warm bronze, and off-white ivory matches the look and feel of high-end materials like brushed steel and stones.
-- **Restrained Motion:** Every transition and animation is deliberately slowed down to create a heavy, luxurious, and deliberate feel—reminiscent of architectural structures and luxury automobiles.
+---
+
+## 🛠 Services & Manufacturing Capabilities
+
+- **Precision Fabrication:** High-tensile steel frame welding, crash-safe passenger roll cages, and precision sheet metal cladding.
+- **Engine & Power Integration:** Expert packaging and mounting of heavy-duty Volvo industrial powertrains.
+- **Quality Assurance & Diagnostics:** Advanced load distribution tests, pneumatic brake validation, and certified weld integrity inspections.
+- **National Compliance:** Fully certified under **AIS 052** (Bus Body Code Standards), **ISO 9001** (Quality Management), **BS VI** (Emission Regulations), and officially recognized by **Volvo** as an authorized OEM coachbuilder.
 
 ---
 
 ## 🚀 How to Run the Website
 
-Follow these simple steps to get the website running locally on your computer:
+Follow these simple steps to run the website project locally:
 
 ### 1. Install Dependencies
-Open your terminal in the project directory and install the required packages:
+Open your terminal in the project directory and install the packages:
 ```bash
 npm install
 ```
 
-### 2. Add Cinematic Frames
-This website uses a high-end scroll animation that requires image frames. Ensure that you have a sequence of images (named `1.webp`, `2.webp`, etc.) inside the following folder:
+### 2. Configure Cinematic Frames
+The homepage cinematic scroll relies on pre-rendered frame assets. Ensure that your image sequence files (e.g., WebP images) are placed in:
 ```
 public/frames/
 ```
 
 ### 3. Start the Development Server
-Run the command below to start the website:
+Launch the website on your local machine:
 ```bash
 npm run dev
 ```
-Once started, open [http://localhost:3000](http://localhost:3000) in your web browser to see the website.
+Open [http://localhost:3000](http://localhost:3000) in your web browser to view the site.
 
 ### 4. Build for Production
-To build the website for deployment or production testing, run:
+To bundle and optimize the project for production, run:
 ```bash
 npm run build
 npm run start
 ```
-
----
-
-## ✨ Key Highlights
-
-- **Scroll-Cinematic Hero:** An interactive visual experience on the homepage that responds as you scroll.
-- **Buttery-Smooth Scrolling:** Integrated with smooth-scrolling physics to deliver a premium feel.
-- **Editorial Layouts:** Minimalist pages utilizing beautiful typography and clean grid systems.
-- **SEO Ready:** Complete pages designed to rank well on search engines across various regions.
