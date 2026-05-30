@@ -13,7 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/compliance",
     "/commission",
     "/privacy",
-    "/cookies",
     "/terms",
     // SEO Core Commercial Landing Pages
     "/bus-body-builders-india",

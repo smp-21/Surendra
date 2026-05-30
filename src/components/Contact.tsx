@@ -128,15 +128,15 @@ export default function Contact() {
         {/* Section Header */}
         <div className="max-w-2xl mx-auto text-center mb-8 sm:mb-12">
           <div className="flex items-center justify-center gap-2 mb-3">
-            <Mail className="w-4 h-4 text-bronze animate-led-flicker" />
-            <span className="font-mono text-[10px] tracking-[0.3em] text-steel-light uppercase font-bold">
+            <Mail className="w-4 h-4 text-bronze" />
+            <span className="font-sans text-xs tracking-[0.08em] text-steel-light uppercase font-medium">
               Acquisitions
             </span>
           </div>
-          <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl font-semibold tracking-[0.1em] sm:tracking-[0.15em] uppercase text-white leading-tight">
+          <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl font-semibold tracking-[0.04em] sm:tracking-[0.06em] uppercase text-white leading-tight">
             Let's Build <span className="italic text-bronze font-light">Something Enduring.</span>
           </h2>
-          <p className="text-zinc-400 text-[10px] sm:text-xs tracking-wider uppercase font-mono mt-3 sm:mt-4">
+          <p className="text-zinc-400 text-xs sm:text-sm tracking-wider normal-case font-sans mt-3 sm:mt-4">
             Submit your chassis brief or custom build requirements.
           </p>
         </div>
@@ -147,7 +147,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-10%" }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="bg-charcoal/65 border border-white/[0.08] backdrop-blur-xl p-6 sm:p-10 md:p-12 w-full max-w-2xl mx-auto rounded-[6px] shadow-2xl transition-all duration-500 hover:border-bronze/40 hover:bg-[#070809]/80 hover:shadow-[0_20px_50px_rgba(197,180,159,0.05)] relative tech-hud-brackets"
+          className="bg-charcoal/50 border border-white/[0.06] backdrop-blur-xl p-6 sm:p-10 md:p-12 w-full max-w-2xl mx-auto rounded-2xl shadow-lg transition-all duration-500 hover:border-bronze/30 relative"
         >
           <AnimatePresence mode="wait">
             {submitStatus !== "success" ? (
@@ -174,7 +174,7 @@ export default function Contact() {
 
                 {/* Row 1: Full Name */}
                 <div className="flex flex-col gap-1.5">
-                  <label className="font-mono text-[9px] tracking-widest text-zinc-200 uppercase flex justify-between font-bold">
+                  <label className="font-sans text-[11px] tracking-wider text-zinc-300 uppercase flex justify-between font-medium">
                     <span>Full Name *</span>
                     {errors.name && <span className="text-bronze font-bold">MINIMUM 3 CHARACTERS</span>}
                   </label>
@@ -183,7 +183,7 @@ export default function Contact() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className={`bg-stone/5 border focus:outline-none p-3 px-4 text-xs font-mono text-white rounded-[4px] transition-all duration-300 ${
+                    className={`bg-stone/5 border focus:outline-none p-3 px-4 text-sm font-sans text-white rounded-lg transition-all duration-300 ${
                       errors.name 
                         ? "border-bronze-dark/60 focus:border-bronze focus:ring-1 focus:ring-bronze/20" 
                         : "border-white/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20"
@@ -195,7 +195,7 @@ export default function Contact() {
                 {/* Row 2: Work Email & Phone Number */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="flex flex-col gap-1.5">
-                    <label className="font-mono text-[9px] tracking-widest text-zinc-200 uppercase flex justify-between font-bold">
+                    <label className="font-sans text-[11px] tracking-wider text-zinc-300 uppercase flex justify-between font-medium">
                       <span>Work Email *</span>
                       {errors.email && <span className="text-bronze font-bold">INVALID FORMAT</span>}
                     </label>
@@ -204,7 +204,7 @@ export default function Contact() {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className={`bg-stone/5 border focus:outline-none p-3 px-4 text-xs font-mono text-white rounded-[4px] transition-all duration-300 ${
+                      className={`bg-stone/5 border focus:outline-none p-3 px-4 text-sm font-sans text-white rounded-lg transition-all duration-300 ${
                         errors.email 
                           ? "border-bronze-dark/60 focus:border-bronze focus:ring-1 focus:ring-bronze/20" 
                           : "border-white/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20"
@@ -214,7 +214,7 @@ export default function Contact() {
                   </div>
                   
                   <div className="flex flex-col gap-1.5">
-                    <label className="font-mono text-[9px] tracking-widest text-zinc-200 uppercase flex justify-between font-bold">
+                    <label className="font-sans text-[11px] tracking-wider text-zinc-300 uppercase flex justify-between font-medium">
                       <span>Phone Number *</span>
                       {errors.phone && <span className="text-bronze font-bold">MINIMUM 8 DIGITS</span>}
                     </label>
@@ -223,7 +223,7 @@ export default function Contact() {
                       required
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className={`bg-stone/5 border focus:outline-none p-3 px-4 text-xs font-mono text-white rounded-[4px] transition-all duration-300 ${
+                      className={`bg-stone/5 border focus:outline-none p-3 px-4 text-sm font-sans text-white rounded-lg transition-all duration-300 ${
                         errors.phone 
                           ? "border-bronze-dark/60 focus:border-bronze focus:ring-1 focus:ring-bronze/20" 
                           : "border-white/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20"
@@ -235,14 +235,14 @@ export default function Contact() {
 
                 {/* Row 3: Select coach type dropdown */}
                 <div className="flex flex-col gap-1.5">
-                  <label className="font-mono text-[9px] tracking-widest text-zinc-200 uppercase font-bold">
+                  <label className="font-sans text-[10px] tracking-wider text-zinc-300 uppercase font-medium">
                     Select coach type *
                   </label>
                   <div className="relative">
                     <select
                       value={formData.coachType}
                       onChange={(e) => setFormData({ ...formData, coachType: e.target.value })}
-                      className="w-full bg-charcoal border border-white/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20 focus:outline-none p-3 px-4 text-xs font-mono text-white rounded-[4px] appearance-none cursor-pointer text-ellipsis overflow-hidden font-bold"
+                      className="w-full bg-charcoal border border-white/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20 focus:outline-none p-3 px-4 text-sm font-sans text-white rounded-lg appearance-none cursor-pointer text-ellipsis overflow-hidden font-medium"
                     >
                       {COACH_RANGE.map((coach) => (
                         <option key={coach.id} value={coach.id}>
@@ -251,33 +251,33 @@ export default function Contact() {
                       ))}
                     </select>
                     <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-bronze font-bold">
-                      <span className="font-mono text-[8px] tracking-widest">// CHOOSE</span>
+                      <span className="font-sans text-[9px] tracking-wider text-bronze/50">▾ Select</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Row 4: Message textarea */}
                 <div className="flex flex-col gap-1.5">
-                  <label className="font-mono text-[9px] tracking-widest text-zinc-200 uppercase font-bold">
+                  <label className="font-sans text-[11px] tracking-wider text-zinc-300 uppercase font-medium">
                     Message (Chassis Brief / Build Requirements)
                   </label>
                   <textarea
                     rows={4}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="bg-stone/5 border border-white/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20 focus:outline-none p-3 px-4 text-xs font-mono text-white rounded-[4px] resize-none transition-all duration-300"
+                    className="bg-stone/5 border border-white/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20 focus:outline-none p-3 px-4 text-sm font-sans text-white rounded-lg resize-none transition-all duration-300"
                     placeholder="Outline your payload configurations, routes, seating, or frame requirements..."
                   />
                 </div>
 
                 {/* Row 5: Mathematical Precision Challenge (Quiet Luxury Inline CAPTCHA) */}
-                <div className="flex flex-col gap-1.5 border border-white/[0.08] bg-[#0c0d0f]/50 p-4 rounded-none relative tech-hud-brackets">
-                  <label className="font-mono text-[9px] tracking-widest text-zinc-300 uppercase flex justify-between font-bold">
+                <div className="flex flex-col gap-1.5 border border-white/[0.06] bg-stone/20 p-4 rounded-xl relative">
+                  <label className="font-sans text-[11px] tracking-wider text-zinc-300 uppercase flex justify-between font-medium">
                     <span>Precision Validation *</span>
                     {errors.captcha && <span className="text-bronze font-bold">CALCULATION ERROR</span>}
                   </label>
                   <div className="flex items-center gap-4 mt-1">
-                    <div className="bg-stone/5 border border-white/[0.08] p-2.5 px-4 rounded-none font-mono text-sm text-bronze font-bold select-none whitespace-nowrap">
+                    <div className="bg-stone/30 border border-white/[0.06] p-2.5 px-4 rounded-lg font-mono text-sm text-bronze/80 font-medium select-none whitespace-nowrap">
                       {num1} + {num2} =
                     </div>
                     <input
@@ -285,7 +285,7 @@ export default function Contact() {
                       required
                       value={formData.captchaAnswer}
                       onChange={(e) => setFormData({ ...formData, captchaAnswer: e.target.value })}
-                      className={`w-full bg-stone/5 border focus:outline-none p-2.5 px-4 text-xs font-mono text-white rounded-[4px] transition-all duration-300 ${
+                      className={`w-full bg-stone/5 border focus:outline-none p-2.5 px-4 text-sm font-sans text-white rounded-lg transition-all duration-300 ${
                         errors.captcha 
                           ? "border-bronze-dark/60 focus:border-bronze focus:ring-1 focus:ring-bronze/20" 
                           : "border-white/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20"
@@ -300,7 +300,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full flex items-center justify-center gap-2 p-3.5 border border-bronze bg-bronze/5 hover:bg-bronze hover:text-charcoal font-mono text-xs font-bold tracking-widest uppercase transition-all duration-300 disabled:opacity-50 select-none cursor-pointer text-white rounded-none relative tech-hud-brackets"
+                    className="w-full flex items-center justify-center gap-2 p-3.5 border border-bronze/60 bg-bronze/5 hover:bg-bronze hover:text-charcoal font-sans text-sm font-medium tracking-wider uppercase transition-all duration-300 disabled:opacity-50 select-none cursor-pointer text-white rounded-xl relative"
                   >
                     <span>{isSubmitting ? "PROCESSING BUILD SPEC..." : "SUBMIT BUILD REQUEST"}</span>
                     <Send className="w-3.5 h-3.5" />
@@ -313,9 +313,9 @@ export default function Contact() {
                         initial={{ opacity: 0, y: -4 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0 }}
-                        className="flex items-center gap-2 border border-bronze-dark/30 bg-bronze-dark/5 p-2.5 px-3.5 font-mono text-[9px] text-bronze font-bold rounded-none"
+                        className="flex items-center gap-2 border border-bronze-dark/20 bg-bronze-dark/5 p-2.5 px-3.5 font-sans text-[10px] text-bronze font-medium rounded-xl"
                       >
-                        <AlertTriangle className="w-3.5 h-3.5 text-bronze shrink-0 animate-led-flicker" />
+                        <AlertTriangle className="w-3.5 h-3.5 text-bronze shrink-0" />
                         <span>{apiErrorMessage || "Submission failed... Please verify the highlighted fields above."}</span>
                       </motion.div>
                     )}
@@ -331,14 +331,14 @@ export default function Contact() {
                 animate={{ opacity: 1, y: 0 }}
                 className="flex flex-col items-center justify-center text-center py-16"
               >
-                <CheckCircle2 className="w-12 h-12 text-bronze mb-5 animate-led-flicker" />
+                <CheckCircle2 className="w-12 h-12 text-bronze mb-5" />
                 <h3 className="font-serif text-2xl font-light text-white mb-1">
                   Commission Received
                 </h3>
-                <p className="font-mono text-[9px] text-bronze tracking-[0.2em] uppercase mb-3">
+                <p className="font-sans text-xs text-bronze/70 tracking-[0.12em] uppercase mb-3">
                   Requisition Ledger ID: SR-{Math.floor(Math.random() * 90000) + 10000}
                 </p>
-                <p className="text-zinc-200 text-xs leading-relaxed max-w-sm font-normal">
+                <p className="text-zinc-200 text-sm leading-relaxed max-w-sm font-normal">
                   Your custom build request has been verified and safely logged in our central fabrication ledger. An acquisitions supervisor will contact you with full cold-rolled metal and frame estimates.
                 </p>
               </motion.div>

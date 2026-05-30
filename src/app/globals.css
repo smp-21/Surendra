@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #070809;
-  --foreground: #f4f4f2;
+  --background: #141820;
+  --foreground: #f0ede8;
 }
 
 @theme {
@@ -10,15 +10,15 @@
   --font-mono: var(--font-geist-mono);
   --font-serif: var(--font-serif);
   
-  /* Brand color tokens: Steel + Heritage + Quiet Luxury */
-  --color-charcoal: #070809;
-  --color-graphite: #121315;
-  --color-steel: #7f8a96;
-  --color-steel-light: #adb9c7;
-  --color-stone: #22252a;
-  --color-ivory: #f4f4f2;
-  --color-bronze: #c5b49f; /* Premium Sandblasted Champagne Titanium */
-  --color-bronze-dark: #48433a; /* Deep Burnished Titanium Slate */
+  /* Brand color tokens: Warm Premium Corporate */
+  --color-charcoal: #141820;
+  --color-graphite: #1a1f2b;
+  --color-steel: #8b95a3;
+  --color-steel-light: #b3bcc9;
+  --color-stone: #232a38;
+  --color-ivory: #f0ede8;
+  --color-bronze: #b09070;
+  --color-bronze-dark: #6b5d4f;
 }
 
 body {
@@ -28,236 +28,89 @@ body {
   overflow-x: hidden;
 }
 
-/* Premium Custom Scrollbar */
+/* Refined Minimal Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #030405;
-  border-left: 1px solid rgba(255, 255, 255, 0.03);
+  background: var(--color-charcoal);
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--color-stone) 0%, var(--color-bronze) 100%);
-  border: 2px solid #030405;
+  background: rgba(176, 144, 112, 0.3);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-bronze);
+  background: rgba(176, 144, 112, 0.5);
 }
 
 /* Base interactive transitions */
 a, button {
-  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Grid lines pattern matching technical blueprints */
-.tech-grid-lines {
-  background-image: 
-    linear-gradient(to right, rgba(127, 138, 150, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(127, 138, 150, 0.05) 1px, transparent 1px);
-  background-size: 80px 80px;
-}
+/* Grid lines pattern — neutralized */
+.tech-grid-lines { background-image: none; }
+.tech-grid-lines-fine { background-image: none; }
 
-.tech-grid-lines-fine {
-  background-image: 
-    linear-gradient(to right, rgba(127, 138, 150, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(127, 138, 150, 0.03) 1px, transparent 1px);
-  background-size: 20px 20px;
-}
-
-/* Technical CAD corner brackets utility */
-.tech-hud-brackets {
-  position: relative;
-}
+/* Corner brackets — neutralized */
+.tech-hud-brackets { position: relative; }
 .tech-hud-brackets::before, .tech-hud-brackets::after {
   content: "";
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  border-color: var(--color-bronze);
-  border-style: solid;
-  pointer-events: none;
-}
-.tech-hud-brackets::before {
-  top: -1px;
-  left: -1px;
-  border-width: 1px 0 0 1px;
-}
-.tech-hud-brackets::after {
-  bottom: -1px;
-  right: -1px;
-  border-width: 0 1px 1px 0;
+  display: none;
 }
 
-/* Metallic Shimmer Effect for Luxury Titles */
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
+/* Clean Headline Styling */
 .shimmer-text {
-  background: linear-gradient(
-    90deg,
-    #ffffff 0%,
-    #f8fafc 15%,
-    #e2e8f0 30%,
-    #cbd5e1 45%,
-    #94a3b8 55%,
-    #cbd5e1 65%,
-    #f1f5f9 80%,
-    #ffffff 100%
-  );
-  background-size: 200% auto;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: shimmer 8s linear infinite;
+  background: none;
+  color: white;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  animation: none;
   display: inline-block;
-  /* Fix the black/dark text-clipping bug by using filter drop-shadow instead of text-shadow */
-  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.95)) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.85));
+  filter: none;
 }
 
-/* Premium Text Shadows for legibility against dynamic scroll backgrounds */
+/* Subtle text shadows for legibility on scroll backgrounds */
 .text-shadow-premium {
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 2px 6px rgba(0, 0, 0, 0.85);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
 }
 
 .text-shadow-subtle {
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Lenis Smooth Scroll Configuration */
-html.lenis, html.lenis body {
-  height: auto;
-}
+/* Lenis Smooth Scroll */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-scrolling iframe { pointer-events: none; }
 
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
-}
-
-/* Custom Silent Roaring Breathing Watermark Effect with Continuous Analog Flicker */
+/* Subtle Breathing Watermark */
 @keyframes silent-roar {
-  0%, 100% {
-    opacity: 0.015;
-    filter: drop-shadow(0 0 5px rgba(197, 180, 159, 0));
-  }
-  24% {
-    opacity: 0.024;
-    filter: drop-shadow(0 0 12px rgba(197, 180, 159, 0.04));
-  }
-  26% {
-    opacity: 0.018;
-    filter: drop-shadow(0 0 8px rgba(197, 180, 159, 0.02));
-  }
-  28% {
-    opacity: 0.028;
-    filter: drop-shadow(0 0 14px rgba(197, 180, 159, 0.05));
-  }
-  50% {
-    opacity: 0.045;
-    filter: drop-shadow(0 0 30px rgba(197, 180, 159, 0.12));
-  }
-  72% {
-    opacity: 0.022;
-    filter: drop-shadow(0 0 10px rgba(197, 180, 159, 0.03));
-  }
-  74% {
-    opacity: 0.032;
-    filter: drop-shadow(0 0 16px rgba(197, 180, 159, 0.06));
-  }
-  76% {
-    opacity: 0.020;
-    filter: drop-shadow(0 0 9px rgba(197, 180, 159, 0.025));
-  }
+  0%, 100% { opacity: 0.02; }
+  50% { opacity: 0.05; }
 }
 
 .animate-silent-roar {
   animation: silent-roar 14s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
 }
 
-/* Premium Organic Analog LED Indicator Flicker */
+/* Gentle Pulse */
 @keyframes led-flicker {
-  0%, 100% {
-    opacity: 1;
-    filter: brightness(1.2);
-  }
-  24% {
-    opacity: 0.8;
-    filter: brightness(1.05);
-  }
-  26% {
-    opacity: 0.95;
-    filter: brightness(1.15);
-  }
-  28% {
-    opacity: 0.45;
-    filter: brightness(0.8);
-  }
-  30% {
-    opacity: 0.9;
-    filter: brightness(1.1);
-  }
-  32% {
-    opacity: 0.75;
-    filter: brightness(0.95);
-  }
-  62% {
-    opacity: 1;
-    filter: brightness(1.2);
-  }
-  64% {
-    opacity: 0.55;
-    filter: brightness(0.85);
-  }
-  66% {
-    opacity: 0.9;
-    filter: brightness(1.1);
-  }
-  80% {
-    opacity: 0.8;
-    filter: brightness(1);
-  }
-  82% {
-    opacity: 0.4;
-    filter: brightness(0.75);
-  }
-  84% {
-    opacity: 0.85;
-    filter: brightness(1.05);
-  }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
 }
 
 .animate-led-flicker {
-  animation: led-flicker 6s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+  animation: led-flicker 3s ease-in-out infinite;
 }
 
-/* Technical node badge vertical collision safety override */
+/* Hero badge collision safety */
 @media (max-height: 800px) {
-  .hero-top-badge {
-    display: none !important;
-  }
+  .hero-top-badge { display: none !important; }
 }
 
-/* Premium Noise & Micro-Texture System */
-.premium-noise {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-}
-
-
+/* Noise — neutralized */
+.premium-noise { background-image: none; }

@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Surendra & Co. — Premium Coachbuilding Website
 
-## Getting Started
+A premium corporate website built for **Surendra & Co.**, designed with a sleek, minimalist industrial luxury aesthetic.
 
-First, run the development server:
+---
 
+## 🏛 The Vision: Engineering Trust
+
+Surendra & Co. represents decades of engineering excellence, precision manufacturing, and master coachbuilding. This website is designed to be a cinematic, editorial digital showcase that mirrors the premium, durable, and reliable quality of our physical vehicles.
+
+### Brand Pillars
+- **Durable Elegance:** The design avoids distracting, flashy decorations. Instead, it utilizes structured grids, thin architectural borders, and generous breathing room to make the content feel solid and premium.
+- **Quiet Luxury:** A carefully curated, understated color scheme of charcoal, warm bronze, and off-white ivory matches the look and feel of high-end materials like brushed steel and stones.
+- **Restrained Motion:** Every transition and animation is deliberately slowed down to create a heavy, luxurious, and deliberate feel—reminiscent of architectural structures and luxury automobiles.
+
+---
+
+## 🚀 How to Run the Website
+
+Follow these simple steps to get the website running locally on your computer:
+
+### 1. Install Dependencies
+Open your terminal in the project directory and install the required packages:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Add Cinematic Frames
+This website uses a high-end scroll animation that requires image frames. Ensure that you have a sequence of images (named `1.webp`, `2.webp`, etc.) inside the following folder:
+```
+public/frames/
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Start the Development Server
+Run the command below to start the website:
+```bash
+npm run dev
+```
+Once started, open [http://localhost:3000](http://localhost:3000) in your web browser to see the website.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Build for Production
+To build the website for deployment or production testing, run:
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## ✨ Key Highlights
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Scroll-Cinematic Hero:** An interactive visual experience on the homepage that responds as you scroll.
+- **Buttery-Smooth Scrolling:** Integrated with smooth-scrolling physics to deliver a premium feel.
+- **Editorial Layouts:** Minimalist pages utilizing beautiful typography and clean grid systems.
+- **SEO Ready:** Complete pages designed to rank well on search engines across various regions.

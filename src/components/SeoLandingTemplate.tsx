@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowLeft, ChevronDown, Check, FileText, Settings, ShieldAlert, Cpu } from "lucide-react";
+import { ArrowLeft, ChevronDown, Check, FileText, Settings, ShieldAlert, Award } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -43,7 +43,7 @@ export default function SeoLandingTemplate({
   };
 
   return (
-    <div className="bg-[#070809] text-ivory min-h-screen relative selection:bg-bronze/30 selection:text-white flex flex-col justify-between">
+    <div className="bg-charcoal text-ivory min-h-screen relative selection:bg-bronze/30 selection:text-white flex flex-col justify-between">
       {/* Dynamic JSON-LD Schema Injection */}
       <script
         type="application/ld+json"
@@ -53,10 +53,6 @@ export default function SeoLandingTemplate({
       {/* Global Navigation */}
       <Navbar />
 
-      {/* Background blueprint lines */}
-      <div className="absolute inset-0 tech-grid-lines pointer-events-none opacity-[0.06] z-0" />
-      <div className="absolute inset-0 tech-grid-lines-fine pointer-events-none opacity-[0.04] z-0" />
-
       {/* Main Container */}
       <main className="flex-grow pt-32 pb-24 relative z-10">
         <div className="max-w-5xl mx-auto px-6 sm:px-12 md:px-16">
@@ -64,7 +60,7 @@ export default function SeoLandingTemplate({
           {/* Back to Home anchor */}
           <a
             href="/"
-            className="inline-flex items-center gap-2 font-mono text-[9px] tracking-widest text-zinc-500 hover:text-bronze transition-colors uppercase mb-8 group"
+            className="inline-flex items-center gap-2 font-sans text-[11px] tracking-wide text-zinc-500 hover:text-bronze transition-colors uppercase mb-8 group"
           >
             <ArrowLeft className="w-3 h-3 group-hover:-translate-x-0.5 transition-transform" />
             <span>Return to Central Command</span>
@@ -72,7 +68,7 @@ export default function SeoLandingTemplate({
 
           {/* Technical Section Header */}
           <div className="border-b border-white/[0.08] pb-10 mb-12">
-            <span className="font-mono text-[9px] tracking-[0.35em] text-bronze uppercase block mb-4 font-bold">
+            <span className="font-sans text-[11px] tracking-[0.12em] text-bronze/70 uppercase block mb-4 font-medium">
               {eyebrow}
             </span>
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-[0.04em] text-white leading-tight mb-6">
@@ -84,26 +80,26 @@ export default function SeoLandingTemplate({
           </div>
 
           {/* Specification Brief Indicator HUD - Liquid Platinum / Titanium */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 bg-white/[0.01] border border-white/[0.08] p-6 rounded-none relative tech-hud-brackets backdrop-blur-md">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 bg-white/[0.02] border border-white/[0.05] p-6 rounded-2xl backdrop-blur-md">
             <div className="flex items-start gap-3">
               <FileText className="w-5 h-5 text-bronze shrink-0 mt-0.5" />
-              <div className="flex flex-col gap-1 font-mono text-[10px]">
-                <span className="text-zinc-500 uppercase tracking-wider font-bold">STATUS SPECIFICATION</span>
-                <span className="text-zinc-200 uppercase font-semibold">VERIFIED / AIS-052 STANDARDS</span>
+              <div className="flex flex-col gap-1 font-sans text-[10px]">
+                <span className="text-zinc-500 uppercase tracking-wide font-medium">STATUS SPECIFICATION</span>
+                <span className="text-zinc-200 uppercase font-medium">VERIFIED / AIS-052 STANDARDS</span>
               </div>
             </div>
             <div className="flex items-start gap-3 border-t md:border-t-0 md:border-l border-white/[0.06] pt-4 md:pt-0 md:pl-6">
               <Settings className="w-5 h-5 text-bronze shrink-0 mt-0.5" />
-              <div className="flex flex-col gap-1 font-mono text-[10px]">
-                <span className="text-zinc-500 uppercase tracking-wider font-bold">CORE RIGOUR LAYER</span>
-                <span className="text-zinc-200 uppercase font-semibold">HEAVY DUTY AUTOMOTIVE SYSTEM</span>
+              <div className="flex flex-col gap-1 font-sans text-[10px]">
+                <span className="text-zinc-500 uppercase tracking-wide font-medium">CORE RIGOUR LAYER</span>
+                <span className="text-zinc-200 uppercase font-medium">HEAVY DUTY AUTOMOTIVE SYSTEM</span>
               </div>
             </div>
             <div className="flex items-start gap-3 border-t md:border-t-0 md:border-l border-white/[0.06] pt-4 md:pt-0 md:pl-6">
-              <Cpu className="w-5 h-5 text-bronze shrink-0 mt-0.5" />
-              <div className="flex flex-col gap-1 font-mono text-[10px]">
-                <span className="text-zinc-500 uppercase tracking-wider font-bold">CENTRAL REGULATION</span>
-                <span className="text-zinc-200 uppercase font-semibold">BIS ALLOY SYNCHRONIZED</span>
+              <Award className="w-5 h-5 text-bronze shrink-0 mt-0.5" />
+              <div className="flex flex-col gap-1 font-sans text-[10px]">
+                <span className="text-zinc-500 uppercase tracking-wide font-medium">CENTRAL REGULATION</span>
+                <span className="text-zinc-200 uppercase font-medium">BIS ALLOY SYNCHRONIZED</span>
               </div>
             </div>
           </div>
@@ -121,25 +117,23 @@ export default function SeoLandingTemplate({
 
             {/* Right Side: Specifications Matrix */}
             <div className="lg:col-span-4 sticky top-32 flex flex-col gap-8">
-              <div className="border border-white/[0.08] bg-[#0c0d0f] rounded-none p-6 shadow-xl relative overflow-hidden tech-hud-brackets">
-                <div className="absolute inset-0 tech-grid-lines pointer-events-none opacity-[0.03]" />
-                <h3 className="font-mono text-[10px] text-bronze tracking-[0.25em] uppercase font-bold mb-6 flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-bronze animate-led-flicker rounded-full" />
+              <div className="border border-white/[0.08] bg-charcoal/80 rounded-2xl p-6 shadow-xl relative overflow-hidden">
+                <h3 className="font-serif text-sm text-bronze/70 tracking-[0.06em] normal-case font-medium mb-6 flex items-center gap-2">
                   TECHNICAL MATRIX
                 </h3>
                 
-                <div className="flex flex-col gap-4 font-mono text-[10px]">
+                <div className="flex flex-col gap-4 font-sans text-[10px]">
                   {specifications.map((spec, idx) => (
                     <div key={idx} className="flex flex-col gap-1.5 border-b border-white/[0.06] pb-3">
-                      <span className="text-zinc-500 uppercase tracking-wider font-bold">{spec.label}</span>
-                      <span className="text-white uppercase font-semibold text-[11px]">{spec.value}</span>
+                      <span className="text-zinc-500 uppercase tracking-wide font-medium">{spec.label}</span>
+                      <span className="text-white uppercase font-medium text-[11px]">{spec.value}</span>
                     </div>
                   ))}
                 </div>
 
                 <a
                   href="/commission"
-                  className="mt-8 w-full inline-flex items-center justify-center gap-2 p-3.5 border border-bronze bg-bronze/5 hover:bg-bronze hover:text-charcoal font-mono text-[10px] font-bold tracking-widest uppercase transition-all duration-300 rounded-none relative tech-hud-brackets text-center text-white"
+                  className="mt-8 w-full inline-flex items-center justify-center gap-2 p-3.5 border border-bronze bg-bronze/5 hover:bg-bronze hover:text-charcoal font-sans text-[11px] font-medium tracking-wider uppercase transition-all duration-300 rounded-xl text-center text-white"
                 >
                   <span>REQUEST DRAWINGS</span>
                 </a>
@@ -151,8 +145,8 @@ export default function SeoLandingTemplate({
           {/* Interactive FAQs Accordion */}
           <div className="border-t border-white/[0.08] pt-16 mb-20">
             <div className="max-w-3xl mb-12">
-              <span className="font-mono text-[9px] tracking-[0.3em] text-bronze uppercase block mb-3 font-bold">
-                // SYSTEM ANSWERS
+              <span className="font-sans text-[11px] tracking-[0.12em] text-bronze/70 uppercase block mb-3 font-medium">
+                SYSTEM ANSWERS
               </span>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold tracking-[0.08em] text-white uppercase">
                 Frequently Answered Queries
@@ -165,7 +159,7 @@ export default function SeoLandingTemplate({
                 return (
                   <div
                     key={idx}
-                    className="border border-white/[0.08] bg-[#0c0d0f]/30 hover:bg-[#0c0d0f]/60 rounded-none overflow-hidden transition-colors duration-300"
+                    className="border border-white/[0.08] bg-white/[0.02] hover:bg-white/[0.04] rounded-xl overflow-hidden transition-colors duration-300"
                   >
                     <button
                       onClick={() => toggleFaq(idx)}
@@ -192,8 +186,7 @@ export default function SeoLandingTemplate({
           </div>
 
           {/* Final Industrial CTA Section */}
-          <div className="border border-white/[0.08] bg-charcoal/80 rounded-none p-8 sm:p-12 text-center relative overflow-hidden shadow-2xl tech-hud-brackets">
-            <div className="absolute inset-0 tech-grid-lines pointer-events-none opacity-[0.05]" />
+          <div className="border border-white/[0.08] bg-charcoal/80 rounded-2xl p-8 sm:p-12 text-center relative overflow-hidden shadow-lg">
             <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wider text-white uppercase mb-4">
               Commence Your Custom Chassis Formulation
             </h3>
@@ -202,10 +195,10 @@ export default function SeoLandingTemplate({
             </p>
             <a
               href="/commission"
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-bronze bg-[#070809]/95 text-white hover:bg-bronze hover:text-[#070809] text-xs tracking-[0.25em] font-bold uppercase transition-all duration-500 rounded-none relative tech-hud-brackets cursor-pointer shadow-2xl"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-bronze bg-charcoal/90 text-white hover:bg-bronze hover:text-charcoal text-xs tracking-wider font-medium uppercase transition-all duration-500 rounded-xl cursor-pointer shadow-lg"
             >
               <span>BESPOKE REQUISITION</span>
-              <span className="font-mono text-[9px] tracking-widest">// FORGE SYSTEM</span>
+              <span className="font-sans text-[9px] tracking-wider">FORGE SYSTEM</span>
             </a>
           </div>
 

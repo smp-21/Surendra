@@ -13,7 +13,6 @@ export default function RangePage() {
       <Navbar />
 
       <main className="flex-grow pt-32 relative">
-        <div className="absolute inset-0 tech-grid-lines pointer-events-none opacity-[0.08]" />
 
         <div className="relative z-10 max-w-6xl mx-auto px-8 md:px-16 pb-32">
           
@@ -26,7 +25,7 @@ export default function RangePage() {
           >
             <div className="flex items-center gap-3 mb-6">
               <Layers className="w-4 h-4 text-bronze" />
-              <span className="font-mono text-[10px] tracking-[0.35em] text-bronze uppercase font-semibold">
+              <span className="font-sans text-[11px] tracking-[0.12em] text-bronze uppercase font-medium">
                 Product Lineup
               </span>
             </div>
@@ -46,37 +45,39 @@ export default function RangePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.15 * idx }}
-                className="border border-white/[0.08] bg-charcoal/65 backdrop-blur-md p-8 md:p-10 rounded-[4px] group hover:border-bronze/40 hover:bg-[#070809]/80 transition-all duration-500 shadow-lg relative tech-hud-brackets"
+                className="border border-white/[0.06] bg-charcoal/50 backdrop-blur-md p-8 md:p-12 rounded-2xl group hover:border-bronze/30 transition-all duration-500 shadow-lg relative"
               >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                  {/* Left: Title & Description */}
                   <div>
-                    <span className="font-mono text-[9px] tracking-[0.25em] text-bronze uppercase font-bold mb-2 block">
+                    <span className="font-sans text-[11px] tracking-[0.12em] text-bronze/70 uppercase font-medium mb-3 block">
                       {coach.eyebrow}
                     </span>
                     <h2 className="font-serif text-3xl sm:text-4xl font-light text-white tracking-wide mb-4 group-hover:text-bronze transition-colors">
                       {coach.name}
                     </h2>
-                    <p className="text-zinc-200 text-base leading-relaxed font-light">
+                    <p className="text-zinc-300 text-base leading-relaxed font-light">
                       {coach.description}
                     </p>
                   </div>
 
-                  <div className="flex flex-col justify-center gap-3 font-mono text-[10px] border-t lg:border-t-0 border-l-0 lg:border-l border-stone/15 pl-0 lg:pl-8 pt-6 lg:pt-0">
-                    <div className="flex justify-between border-b border-stone/10 pb-2">
-                      <span className="text-zinc-400 font-medium">CHASSIS</span>
-                      <span className="text-white font-bold">{coach.specs.chassis}</span>
+                  {/* Right: Specifications Table */}
+                  <div className="flex flex-col justify-center gap-0 border-t lg:border-t-0 border-l-0 lg:border-l border-white/[0.06] pl-0 lg:pl-10 pt-8 lg:pt-0">
+                    <div className="flex items-baseline justify-between py-4 border-b border-white/[0.05]">
+                      <span className="font-sans text-xs tracking-wider text-zinc-500 uppercase font-normal">Chassis</span>
+                      <span className="font-sans text-sm text-white font-normal text-right">{coach.specs.chassis}</span>
                     </div>
-                    <div className="flex justify-between border-b border-stone/10 pb-2">
-                      <span className="text-zinc-400 font-medium">METALS</span>
-                      <span className="text-white font-bold">{coach.specs.material}</span>
+                    <div className="flex items-baseline justify-between py-4 border-b border-white/[0.05]">
+                      <span className="font-sans text-xs tracking-wider text-zinc-500 uppercase font-normal">Metals</span>
+                      <span className="font-sans text-sm text-white font-normal text-right">{coach.specs.material}</span>
                     </div>
-                    <div className="flex justify-between border-b border-stone/10 pb-2">
-                      <span className="text-zinc-400 font-medium">SUSPENSION</span>
-                      <span className="text-white font-bold">{coach.specs.suspension}</span>
+                    <div className="flex items-baseline justify-between py-4 border-b border-white/[0.05]">
+                      <span className="font-sans text-xs tracking-wider text-zinc-500 uppercase font-normal">Suspension</span>
+                      <span className="font-sans text-sm text-white font-normal text-right">{coach.specs.suspension}</span>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-zinc-400 font-medium">PAYLOAD</span>
-                      <span className="text-bronze font-bold">{coach.specs.payload}</span>
+                    <div className="flex items-baseline justify-between py-4">
+                      <span className="font-sans text-xs tracking-wider text-zinc-500 uppercase font-normal">Payload</span>
+                      <span className="font-sans text-sm text-bronze font-medium text-right">{coach.specs.payload}</span>
                     </div>
                   </div>
                 </div>

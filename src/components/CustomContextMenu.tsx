@@ -125,12 +125,12 @@ export default function CustomContextMenu() {
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
             style={{ top: position.y, left: position.x }}
-            className="fixed z-[999] w-60 bg-[#070809]/95 border border-white/[0.12] rounded-xl backdrop-blur-2xl shadow-[0_25px_60px_rgba(0,0,0,0.9)] overflow-hidden font-mono p-1 select-none pointer-events-auto"
+            className="fixed z-[999] w-60 bg-[#0f1117]/95 border border-white/[0.10] rounded-xl backdrop-blur-2xl shadow-[0_25px_60px_rgba(0,0,0,0.9)] overflow-hidden font-sans p-1 select-none pointer-events-auto"
           >
             {/* Technical Header */}
-            <div className="flex items-center justify-between px-3.5 py-2 border-b border-white/[0.08] text-[8px] tracking-[0.25em] text-zinc-500 uppercase font-bold">
-              <span>LEDGER CONTEXT // HQ Z-3</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-bronze animate-led-flicker" />
+            <div className="flex items-center justify-between px-3.5 py-2 border-b border-white/[0.08] text-[9px] tracking-[0.15em] text-zinc-500 uppercase font-medium">
+              <span>CONTEXT MENU</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-bronze" />
             </div>
 
             {/* Menu Items */}
@@ -160,7 +160,7 @@ export default function CustomContextMenu() {
             </div>
 
             {/* Technical Footer */}
-            <div className="mt-1 flex items-center justify-between px-3.5 py-1.5 border-t border-white/[0.08] text-[7px] text-zinc-600 tracking-wider">
+            <div className="mt-1 flex items-center justify-between px-3.5 py-1.5 border-t border-white/[0.08] text-[8px] text-zinc-600 tracking-wider font-sans">
               <span>VER // 16.2.6-TURBO</span>
               <span>© SURENDRA</span>
             </div>
@@ -177,15 +177,14 @@ export default function CustomContextMenu() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 15 }}
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
-              className="relative w-full max-w-md bg-[#070809] border border-bronze/35 p-6 rounded-2xl shadow-2xl overflow-hidden text-ivory font-mono"
+              className="relative w-full max-w-md bg-[#0f1117] border border-white/[0.12] p-6 rounded-2xl shadow-2xl overflow-hidden text-ivory font-sans"
             >
-              {/* Background technical lines */}
-              <div className="absolute inset-0 tech-grid-lines pointer-events-none opacity-[0.06]" />
+              {/* Background */}
 
               {/* Title */}
               <div className="flex items-center gap-2.5 mb-5 border-b border-white/[0.08] pb-3">
-                <Terminal className="w-4 h-4 text-bronze animate-led-flicker" />
-                <h3 className="text-xs font-bold tracking-[0.25em] text-white uppercase">
+                <Terminal className="w-4 h-4 text-bronze" />
+                <h3 className="text-xs font-medium tracking-[0.15em] text-white uppercase">
                   PLATFORM DIAGNOSTIC HUD
                 </h3>
               </div>
@@ -227,7 +226,7 @@ export default function CustomContextMenu() {
                 <span className="text-[8px] text-zinc-500 tracking-widest">LEDGER LOG OUT // HQ Z-3</span>
                 <button
                   onClick={() => setShowHUD(false)}
-                  className="flex items-center gap-1.5 px-4 py-2 border border-bronze bg-bronze/5 hover:bg-bronze hover:text-[#070809] font-mono text-[9px] tracking-widest font-bold uppercase rounded-lg transition-all duration-300 cursor-pointer"
+                  className="flex items-center gap-1.5 px-4 py-2 border border-bronze bg-bronze/5 hover:bg-bronze hover:text-[#0f1117] font-sans text-[9px] tracking-wider font-medium uppercase rounded-lg transition-all duration-300 cursor-pointer"
                 >
                   <span>CLOSE STATUS</span>
                 </button>

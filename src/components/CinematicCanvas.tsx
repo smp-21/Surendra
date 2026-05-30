@@ -207,27 +207,21 @@ export default function CinematicCanvas({ images }: CinematicCanvasProps) {
         }}
       />
 
-      {/* Faint Technical Blueprint Grid Lines */}
-      <div className="absolute inset-0 tech-grid-lines pointer-events-none opacity-[0.12]" />
-      <div className="absolute inset-0 tech-grid-lines-fine pointer-events-none opacity-[0.08]" />
+
 
       {/* Cinematic Dark Vignette — lightened for better video visibility */}
       <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-charcoal/50 pointer-events-none mix-blend-multiply opacity-50" />
       <div className="absolute inset-0 bg-gradient-to-r from-charcoal/60 via-transparent to-charcoal/60 pointer-events-none opacity-25" />
 
-      {/* Structural Steel Border Lines at Viewport Edges */}
-      <div className="absolute top-0 left-0 w-full h-px bg-stone/20" />
-      <div className="absolute bottom-0 left-0 w-full h-px bg-stone/20" />
-      <div className="absolute top-0 left-0 w-px h-full bg-stone/20" />
-      <div className="absolute top-0 right-0 w-px h-full bg-stone/20" />
+
 
       {/* Scroll Progress Bar at the bottom of the canvas viewport */}
       <div 
-        className="absolute bottom-0 left-0 w-full bg-charcoal/40 border-t border-white/[0.06] pointer-events-none z-30" 
-        style={{ height: "8px" }}
+        className="absolute bottom-0 left-0 w-full bg-transparent pointer-events-none z-30" 
+        style={{ height: "3px" }}
       >
         <div 
-          className="h-full bg-gradient-to-r from-bronze/80 via-bronze to-bronze/90 transition-all duration-75 ease-out" 
+          className="h-full bg-bronze/60 transition-all duration-75 ease-out" 
           style={{ width: `${canvasScrollProgress * 100}%` }}
         />
       </div>

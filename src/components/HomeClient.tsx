@@ -202,7 +202,7 @@ export default function HomeClient() {
             key="content"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
+            transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="relative flex flex-col"
           >
             {/* Global Navigation */}
@@ -218,10 +218,10 @@ export default function HomeClient() {
             >
               <a
                 href="#commission"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4.5 border border-bronze bg-[#070809]/95 text-white hover:bg-bronze hover:text-[#070809] hover:shadow-[0_0_45px_rgba(163,144,115,0.45)] hover:scale-[1.03] active:scale-[0.97] text-xs sm:text-sm tracking-[0.22em] font-bold uppercase transition-all duration-500 rounded-full cursor-pointer group shadow-2xl relative overflow-hidden"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4.5 border border-bronze/60 bg-charcoal/90 text-white hover:bg-bronze hover:text-charcoal hover:scale-[1.02] active:scale-[0.98] text-xs sm:text-sm tracking-[0.08em] font-medium uppercase transition-all duration-500 rounded-full cursor-pointer group shadow-lg relative overflow-hidden backdrop-blur-lg"
               >
                 <span>Start Your Build</span>
-                <span className="text-[10px] text-bronze group-hover:text-[#070809] transition-colors duration-500 font-mono tracking-widest font-bold">// 07 →</span>
+                <span className="text-[10px] text-bronze group-hover:text-charcoal transition-colors duration-500 font-sans tracking-wide font-medium">→</span>
               </a>
             </div>
 
@@ -284,10 +284,7 @@ export default function HomeClient() {
                 Bespoke Commission Form (Contact)
                 Renders below the visual scroll container as a standard full-screen static block.
               */}
-              <div id="commission" className="relative bg-charcoal border-t border-stone/20">
-                {/* Background Blueprint Grid Lines */}
-                <div className="absolute inset-0 tech-grid-lines pointer-events-none opacity-[0.12]" />
-                <div className="absolute inset-0 tech-grid-lines-fine pointer-events-none opacity-[0.08]" />
+              <div id="commission" className="relative bg-charcoal border-t border-white/[0.06]">
                 <Contact />
               </div>
 

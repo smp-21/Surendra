@@ -1,9 +1,17 @@
 "use client";
 
 import React, { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 
 export default function SmoothScroll({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+
+  // Force scroll to top on every route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   useEffect(() => {
     // Initialize Lenis
     const lenis = new Lenis({
@@ -14,7 +22,11 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
       smoothWheel: true,
       wheelMultiplier: 0.95, // Highly controlled speed
       touchMultiplier: 1.4,
+      autoResize: true,
     });
+
+    // Scroll to top on fresh page load
+    lenis.scrollTo(0, { immediate: true });
 
     // requestAnimationFrame scroll tick
     function raf(time: number) {
@@ -47,7 +59,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
       lenis.destroy();
       document.removeEventListener("click", handleAnchorClick);
     };
-  }, []);
+  }, [pathname]);
 
   return <>{children}</>;
 }
