@@ -28,7 +28,7 @@ export default function BusBodyBuildersIndia() {
     { label: "WELDING CERTIFICATION", value: "Robotic MIG / TIG AWS certified welds" },
     { label: "CORROSION RESISTANCE", value: "Phosphate conversion multi-bath primer" },
     { label: "RTO LICENSING ASSISTANCE", value: "Immediate Central RTO registration sync" },
-    { label: "PARTNER PLATFORMS", value: "Authorized Volvo, Tata & Leyland custom bodybuilder" },
+    { label: "PARTNER PLATFORMS", value: "Authorized multi-platform custom bodybuilder" },
   ];
 
   const faqs = [
@@ -38,7 +38,7 @@ export default function BusBodyBuildersIndia() {
     },
     {
       question: "Which chassis platforms are compatible with Surendra & Co. bodywork?",
-      answer: "We are officially certified for high-end chassis integration including Volvo B7R and 9600 series, Tata LPO platforms, Ashok Leyland Viking series, and BharatBenz chassis, preserving complete manufacturer drivetrain warranties.",
+      answer: "We are officially certified for high-end chassis integration including Tata, Ashok Leyland, BharatBenz, and other leading commercial chassis platforms, preserving complete manufacturer drivetrain warranties.",
     },
     {
       question: "How does cold-rolled high-tensile steel improve bus body construction?",
@@ -69,7 +69,7 @@ export default function BusBodyBuildersIndia() {
       jsonLd={jsonLd}
     >
       <div className="flex flex-col gap-6">
-        <h2 className="font-serif text-xl sm:text-2xl font-bold text-white uppercase tracking-wider mt-4">
+        <h2 className="font-serif text-xl sm:text-2xl font-bold text-ivory uppercase tracking-wider mt-4">
           1. The Cornerstone of B2B Coachbuilding & Bus Fabrication
         </h2>
         <p>
@@ -79,7 +79,7 @@ export default function BusBodyBuildersIndia() {
           Every transit vehicle we commission begins with thorough structural analysis. By mapping out load distribution nodes across the active chassis, our structural engineers design customizable passenger cages that balance structural strength with fuel-efficient weight reduction. This meticulous attention to frame dynamics prevents structural shearing and metal fatigue, even when operating over severe rural routes or challenging intercity highways.
         </p>
 
-        <h2 className="font-serif text-xl sm:text-2xl font-bold text-white uppercase tracking-wider mt-4">
+        <h2 className="font-serif text-xl sm:text-2xl font-bold text-ivory uppercase tracking-wider mt-4">
           2. Certified AIS-052 Rollover Cage Engineering
         </h2>
         <p>
@@ -89,7 +89,7 @@ export default function BusBodyBuildersIndia() {
           To complement this structural safety grid, we integrate premium fire-retardant cabin insulation panels, anti-slip heavy-duty vinyl flooring, and emergency pneumatic exhaust vents. This holistic approach to safety is why our coaches consistently secure immediate commercial fitness clearances across all state RTO databases.
         </p>
 
-        <h3 className="font-serif text-lg font-bold text-white uppercase tracking-wide mt-4">
+        <h3 className="font-serif text-lg font-bold text-ivory uppercase tracking-wide mt-4">
           3. Multi-Stage Anti-Corrosion Preservation Process
         </h3>
         <p>

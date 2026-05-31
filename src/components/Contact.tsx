@@ -10,7 +10,7 @@ export default function Contact() {
     name: "",
     email: "",
     phone: "",
-    coachType: "volvo-9600-xl",
+    coachType: "intercity-cruiser-xl",
     message: "",
     company_website: "", // Honeypot Field
     captchaAnswer: "", // Captcha input field
@@ -133,10 +133,10 @@ export default function Contact() {
               Acquisitions
             </span>
           </div>
-          <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl font-semibold tracking-[0.04em] sm:tracking-[0.06em] uppercase text-white leading-tight">
+          <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl font-semibold tracking-[0.04em] sm:tracking-[0.06em] uppercase text-ivory leading-tight">
             Let's Build <span className="italic text-bronze font-light">Something Enduring.</span>
           </h2>
-          <p className="text-zinc-400 text-xs sm:text-sm tracking-wider normal-case font-sans mt-3 sm:mt-4">
+          <p className="text-slate-400 text-xs sm:text-sm tracking-wider normal-case font-sans mt-3 sm:mt-4">
             Submit your chassis brief or custom build requirements.
           </p>
         </div>
@@ -147,7 +147,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-10%" }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="bg-charcoal/50 border border-white/[0.06] backdrop-blur-xl p-6 sm:p-10 md:p-12 w-full max-w-2xl mx-auto rounded-2xl shadow-lg transition-all duration-500 hover:border-bronze/30 relative"
+          className="bg-white/70 border border-black/[0.06] backdrop-blur-xl p-6 sm:p-10 md:p-12 w-full max-w-2xl mx-auto rounded-2xl shadow-lg transition-all duration-500 hover:border-bronze/30 relative"
         >
           <AnimatePresence mode="wait">
             {submitStatus !== "success" ? (
@@ -174,7 +174,7 @@ export default function Contact() {
 
                 {/* Row 1: Full Name */}
                 <div className="flex flex-col gap-1.5">
-                  <label className="font-sans text-[11px] tracking-wider text-zinc-300 uppercase flex justify-between font-medium">
+                  <label className="font-sans text-[11px] tracking-wider text-slate-500 uppercase flex justify-between font-medium">
                     <span>Full Name *</span>
                     {errors.name && <span className="text-bronze font-bold">MINIMUM 3 CHARACTERS</span>}
                   </label>
@@ -183,10 +183,10 @@ export default function Contact() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className={`bg-stone/5 border focus:outline-none p-3 px-4 text-sm font-sans text-white rounded-lg transition-all duration-300 ${
+                    className={`bg-stone/5 border focus:outline-none p-3 px-4 text-sm font-sans text-ivory rounded-lg transition-all duration-300 ${
                       errors.name 
                         ? "border-bronze-dark/60 focus:border-bronze focus:ring-1 focus:ring-bronze/20" 
-                        : "border-white/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20"
+                        : "border-black/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20"
                     }`}
                     placeholder="e.g. Johnathan Miller"
                   />
@@ -195,7 +195,7 @@ export default function Contact() {
                 {/* Row 2: Work Email & Phone Number */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="flex flex-col gap-1.5">
-                    <label className="font-sans text-[11px] tracking-wider text-zinc-300 uppercase flex justify-between font-medium">
+                    <label className="font-sans text-[11px] tracking-wider text-slate-500 uppercase flex justify-between font-medium">
                       <span>Work Email *</span>
                       {errors.email && <span className="text-bronze font-bold">INVALID FORMAT</span>}
                     </label>
@@ -204,17 +204,17 @@ export default function Contact() {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className={`bg-stone/5 border focus:outline-none p-3 px-4 text-sm font-sans text-white rounded-lg transition-all duration-300 ${
+                      className={`bg-stone/5 border focus:outline-none p-3 px-4 text-sm font-sans text-ivory rounded-lg transition-all duration-300 ${
                         errors.email 
                           ? "border-bronze-dark/60 focus:border-bronze focus:ring-1 focus:ring-bronze/20" 
-                          : "border-white/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20"
+                          : "border-black/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20"
                       }`}
                       placeholder="officer@company.com"
                     />
                   </div>
                   
                   <div className="flex flex-col gap-1.5">
-                    <label className="font-sans text-[11px] tracking-wider text-zinc-300 uppercase flex justify-between font-medium">
+                    <label className="font-sans text-[11px] tracking-wider text-slate-500 uppercase flex justify-between font-medium">
                       <span>Phone Number *</span>
                       {errors.phone && <span className="text-bronze font-bold">MINIMUM 8 DIGITS</span>}
                     </label>
@@ -223,10 +223,10 @@ export default function Contact() {
                       required
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className={`bg-stone/5 border focus:outline-none p-3 px-4 text-sm font-sans text-white rounded-lg transition-all duration-300 ${
+                      className={`bg-stone/5 border focus:outline-none p-3 px-4 text-sm font-sans text-ivory rounded-lg transition-all duration-300 ${
                         errors.phone 
                           ? "border-bronze-dark/60 focus:border-bronze focus:ring-1 focus:ring-bronze/20" 
-                          : "border-white/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20"
+                          : "border-black/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20"
                       }`}
                       placeholder="+91 98455 51984"
                     />
@@ -235,14 +235,14 @@ export default function Contact() {
 
                 {/* Row 3: Select coach type dropdown */}
                 <div className="flex flex-col gap-1.5">
-                  <label className="font-sans text-[10px] tracking-wider text-zinc-300 uppercase font-medium">
+                  <label className="font-sans text-[10px] tracking-wider text-slate-500 uppercase font-medium">
                     Select coach type *
                   </label>
                   <div className="relative">
                     <select
                       value={formData.coachType}
                       onChange={(e) => setFormData({ ...formData, coachType: e.target.value })}
-                      className="w-full bg-charcoal border border-white/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20 focus:outline-none p-3 px-4 text-sm font-sans text-white rounded-lg appearance-none cursor-pointer text-ellipsis overflow-hidden font-medium"
+                      className="w-full bg-charcoal border border-black/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20 focus:outline-none p-3 px-4 text-sm font-sans text-ivory rounded-lg appearance-none cursor-pointer text-ellipsis overflow-hidden font-medium"
                     >
                       {COACH_RANGE.map((coach) => (
                         <option key={coach.id} value={coach.id}>
@@ -258,26 +258,26 @@ export default function Contact() {
 
                 {/* Row 4: Message textarea */}
                 <div className="flex flex-col gap-1.5">
-                  <label className="font-sans text-[11px] tracking-wider text-zinc-300 uppercase font-medium">
+                  <label className="font-sans text-[11px] tracking-wider text-slate-500 uppercase font-medium">
                     Message (Chassis Brief / Build Requirements)
                   </label>
                   <textarea
                     rows={4}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="bg-stone/5 border border-white/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20 focus:outline-none p-3 px-4 text-sm font-sans text-white rounded-lg resize-none transition-all duration-300"
+                    className="bg-stone/5 border border-black/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20 focus:outline-none p-3 px-4 text-sm font-sans text-ivory rounded-lg resize-none transition-all duration-300"
                     placeholder="Outline your payload configurations, routes, seating, or frame requirements..."
                   />
                 </div>
 
                 {/* Row 5: Mathematical Precision Challenge (Quiet Luxury Inline CAPTCHA) */}
-                <div className="flex flex-col gap-1.5 border border-white/[0.06] bg-stone/20 p-4 rounded-xl relative">
-                  <label className="font-sans text-[11px] tracking-wider text-zinc-300 uppercase flex justify-between font-medium">
+                <div className="flex flex-col gap-1.5 border border-black/[0.06] bg-stone/20 p-4 rounded-xl relative">
+                  <label className="font-sans text-[11px] tracking-wider text-slate-500 uppercase flex justify-between font-medium">
                     <span>Precision Validation *</span>
                     {errors.captcha && <span className="text-bronze font-bold">CALCULATION ERROR</span>}
                   </label>
                   <div className="flex items-center gap-4 mt-1">
-                    <div className="bg-stone/30 border border-white/[0.06] p-2.5 px-4 rounded-lg font-mono text-sm text-bronze/80 font-medium select-none whitespace-nowrap">
+                    <div className="bg-stone/30 border border-black/[0.06] p-2.5 px-4 rounded-lg font-mono text-sm text-bronze/80 font-medium select-none whitespace-nowrap">
                       {num1} + {num2} =
                     </div>
                     <input
@@ -285,10 +285,10 @@ export default function Contact() {
                       required
                       value={formData.captchaAnswer}
                       onChange={(e) => setFormData({ ...formData, captchaAnswer: e.target.value })}
-                      className={`w-full bg-stone/5 border focus:outline-none p-2.5 px-4 text-sm font-sans text-white rounded-lg transition-all duration-300 ${
+                      className={`w-full bg-stone/5 border focus:outline-none p-2.5 px-4 text-sm font-sans text-ivory rounded-lg transition-all duration-300 ${
                         errors.captcha 
                           ? "border-bronze-dark/60 focus:border-bronze focus:ring-1 focus:ring-bronze/20" 
-                          : "border-white/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20"
+                          : "border-black/[0.08] focus:border-bronze focus:ring-1 focus:ring-bronze/20"
                       }`}
                       placeholder="Enter verification sum..."
                     />
@@ -300,7 +300,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full flex items-center justify-center gap-2 p-3.5 border border-bronze/60 bg-bronze/5 hover:bg-bronze hover:text-charcoal font-sans text-sm font-medium tracking-wider uppercase transition-all duration-300 disabled:opacity-50 select-none cursor-pointer text-white rounded-xl relative"
+                    className="w-full flex items-center justify-center gap-2 p-3.5 border border-bronze/60 bg-bronze/5 hover:bg-bronze hover:text-white font-sans text-sm font-medium tracking-wider uppercase transition-all duration-300 disabled:opacity-50 select-none cursor-pointer text-ivory rounded-xl relative"
                   >
                     <span>{isSubmitting ? "PROCESSING BUILD SPEC..." : "SUBMIT BUILD REQUEST"}</span>
                     <Send className="w-3.5 h-3.5" />
@@ -332,13 +332,13 @@ export default function Contact() {
                 className="flex flex-col items-center justify-center text-center py-16"
               >
                 <CheckCircle2 className="w-12 h-12 text-bronze mb-5" />
-                <h3 className="font-serif text-2xl font-light text-white mb-1">
+                <h3 className="font-serif text-2xl font-light text-ivory mb-1">
                   Commission Received
                 </h3>
                 <p className="font-sans text-xs text-bronze/70 tracking-[0.12em] uppercase mb-3">
                   Requisition Ledger ID: SR-{Math.floor(Math.random() * 90000) + 10000}
                 </p>
-                <p className="text-zinc-200 text-sm leading-relaxed max-w-sm font-normal">
+                <p className="text-slate-600 text-sm leading-relaxed max-w-sm font-normal">
                   Your custom build request has been verified and safely logged in our central fabrication ledger. An acquisitions supervisor will contact you with full cold-rolled metal and frame estimates.
                 </p>
               </motion.div>

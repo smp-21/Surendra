@@ -125,10 +125,10 @@ export default function CustomContextMenu() {
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
             style={{ top: position.y, left: position.x }}
-            className="fixed z-[999] w-60 bg-[#0f1117]/95 border border-white/[0.10] rounded-xl backdrop-blur-2xl shadow-[0_25px_60px_rgba(0,0,0,0.9)] overflow-hidden font-sans p-1 select-none pointer-events-auto"
+            className="fixed z-[999] w-60 bg-white/95 border border-black/[0.10] rounded-xl backdrop-blur-2xl shadow-[0_25px_60px_rgba(0,0,0,0.08)] overflow-hidden font-sans p-1 select-none pointer-events-auto"
           >
             {/* Technical Header */}
-            <div className="flex items-center justify-between px-3.5 py-2 border-b border-white/[0.08] text-[9px] tracking-[0.15em] text-zinc-500 uppercase font-medium">
+            <div className="flex items-center justify-between px-3.5 py-2 border-b border-black/[0.08] text-[9px] tracking-[0.15em] text-slate-400 uppercase font-medium">
               <span>CONTEXT MENU</span>
               <span className="w-1.5 h-1.5 rounded-full bg-bronze" />
             </div>
@@ -142,13 +142,13 @@ export default function CustomContextMenu() {
                     e.stopPropagation();
                     item.action();
                   }}
-                  className="w-full flex items-center justify-between text-left p-2.5 px-3 rounded-lg hover:bg-white/[0.03] active:bg-white/[0.05] transition-all duration-200 cursor-pointer group"
+                  className="w-full flex items-center justify-between text-left p-2.5 px-3 rounded-lg hover:bg-black/[0.03] active:bg-black/[0.05] transition-all duration-200 cursor-pointer group"
                 >
                   <div className="flex flex-col gap-0.5">
-                    <span className="text-[10px] text-zinc-300 font-bold tracking-wider group-hover:text-white transition-colors">
+                    <span className="text-[10px] text-slate-500 font-bold tracking-wider group-hover:text-ivory transition-colors">
                       {item.label}
                     </span>
-                    <span className="text-[7px] text-zinc-500 tracking-[0.2em] uppercase">
+                    <span className="text-[7px] text-slate-400 tracking-[0.2em] uppercase">
                       {item.subLabel}
                     </span>
                   </div>
@@ -160,7 +160,7 @@ export default function CustomContextMenu() {
             </div>
 
             {/* Technical Footer */}
-            <div className="mt-1 flex items-center justify-between px-3.5 py-1.5 border-t border-white/[0.08] text-[8px] text-zinc-600 tracking-wider font-sans">
+            <div className="mt-1 flex items-center justify-between px-3.5 py-1.5 border-t border-black/[0.08] text-[8px] text-slate-300 tracking-wider font-sans">
               <span>VER // 16.2.6-TURBO</span>
               <span>© SURENDRA</span>
             </div>
@@ -171,62 +171,62 @@ export default function CustomContextMenu() {
       {/* Premium Technical Diagnostic HUD Panel */}
       <AnimatePresence>
         {showHUD && (
-          <div className="fixed inset-0 z-[1000] flex items-center justify-center p-6 bg-black/60 backdrop-blur-sm select-none pointer-events-auto">
+          <div className="fixed inset-0 z-[1000] flex items-center justify-center p-6 bg-black/30 backdrop-blur-sm select-none pointer-events-auto">
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 15 }}
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
-              className="relative w-full max-w-md bg-[#0f1117] border border-white/[0.12] p-6 rounded-2xl shadow-2xl overflow-hidden text-ivory font-sans"
+              className="relative w-full max-w-md bg-white border border-black/[0.12] p-6 rounded-2xl shadow-2xl overflow-hidden text-ivory font-sans"
             >
               {/* Background */}
 
               {/* Title */}
-              <div className="flex items-center gap-2.5 mb-5 border-b border-white/[0.08] pb-3">
+              <div className="flex items-center gap-2.5 mb-5 border-b border-black/[0.08] pb-3">
                 <Terminal className="w-4 h-4 text-bronze" />
-                <h3 className="text-xs font-medium tracking-[0.15em] text-white uppercase">
+                <h3 className="text-xs font-medium tracking-[0.15em] text-ivory uppercase">
                   PLATFORM DIAGNOSTIC HUD
                 </h3>
               </div>
 
               {/* Diagnostics Grid */}
-              <div className="space-y-3.5 text-[10px] text-zinc-300">
-                <div className="flex justify-between border-b border-white/[0.04] pb-1.5">
-                  <span className="text-zinc-500 uppercase tracking-widest">DEVICE_STATUS:</span>
+              <div className="space-y-3.5 text-[10px] text-slate-500">
+                <div className="flex justify-between border-b border-black/[0.04] pb-1.5">
+                  <span className="text-slate-400 uppercase tracking-widest">DEVICE_STATUS:</span>
                   <span className="text-bronze font-bold">CALIBRATED // SECURE</span>
                 </div>
-                <div className="flex justify-between border-b border-white/[0.04] pb-1.5">
-                  <span className="text-zinc-500 uppercase tracking-widest">NEXT_RENDER:</span>
-                  <span className="text-white font-bold">16.2.6 APP (TURBOPACK)</span>
+                <div className="flex justify-between border-b border-black/[0.04] pb-1.5">
+                  <span className="text-slate-400 uppercase tracking-widest">NEXT_RENDER:</span>
+                  <span className="text-ivory font-bold">16.2.6 APP (TURBOPACK)</span>
                 </div>
-                <div className="flex justify-between border-b border-white/[0.04] pb-1.5">
-                  <span className="text-zinc-500 uppercase tracking-widest">TELEMETRY_LOGS:</span>
-                  <span className="text-white font-bold">VERCEL ANALYTICS ENABLED</span>
+                <div className="flex justify-between border-b border-black/[0.04] pb-1.5">
+                  <span className="text-slate-400 uppercase tracking-widest">TELEMETRY_LOGS:</span>
+                  <span className="text-ivory font-bold">VERCEL ANALYTICS ENABLED</span>
                 </div>
-                <div className="flex justify-between border-b border-white/[0.04] pb-1.5">
-                  <span className="text-zinc-500 uppercase tracking-widest">CLIENT_SYSTEM:</span>
-                  <span className="text-white font-bold uppercase truncate max-w-[200px]">
+                <div className="flex justify-between border-b border-black/[0.04] pb-1.5">
+                  <span className="text-slate-400 uppercase tracking-widest">CLIENT_SYSTEM:</span>
+                  <span className="text-ivory font-bold uppercase truncate max-w-[200px]">
                     {typeof window !== "undefined" ? navigator.platform : "SERVER_ENV"}
                   </span>
                 </div>
-                <div className="flex justify-between border-b border-white/[0.04] pb-1.5">
-                  <span className="text-zinc-500 uppercase tracking-widest">RESOLUTION:</span>
-                  <span className="text-white font-bold">
+                <div className="flex justify-between border-b border-black/[0.04] pb-1.5">
+                  <span className="text-slate-400 uppercase tracking-widest">RESOLUTION:</span>
+                  <span className="text-ivory font-bold">
                     {typeof window !== "undefined" ? `${window.screen.width} x ${window.screen.height}` : "0 x 0"}
                   </span>
                 </div>
                 <div className="flex justify-between pb-1.5">
-                  <span className="text-zinc-500 uppercase tracking-widest">LEDGER_ENCRYPTION:</span>
+                  <span className="text-slate-400 uppercase tracking-widest">LEDGER_ENCRYPTION:</span>
                   <span className="text-green-500/80 font-bold">ACTIVE (SSL/AES-256)</span>
                 </div>
               </div>
 
               {/* HUD Close Action */}
               <div className="mt-6 flex items-center justify-between">
-                <span className="text-[8px] text-zinc-500 tracking-widest">LEDGER LOG OUT // HQ Z-3</span>
+                <span className="text-[8px] text-slate-400 tracking-widest">LEDGER LOG OUT // HQ Z-3</span>
                 <button
                   onClick={() => setShowHUD(false)}
-                  className="flex items-center gap-1.5 px-4 py-2 border border-bronze bg-bronze/5 hover:bg-bronze hover:text-[#0f1117] font-sans text-[9px] tracking-wider font-medium uppercase rounded-lg transition-all duration-300 cursor-pointer"
+                  className="flex items-center gap-1.5 px-4 py-2 border border-bronze bg-bronze/5 hover:bg-bronze hover:text-white font-sans text-[9px] tracking-wider font-medium uppercase rounded-lg transition-all duration-300 cursor-pointer"
                 >
                   <span>CLOSE STATUS</span>
                 </button>

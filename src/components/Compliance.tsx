@@ -18,20 +18,20 @@ export default function Compliance() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "-20%" }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="bg-charcoal/65 border border-white/[0.05] backdrop-blur-xl p-6 sm:p-10 lg:p-12 w-fit max-w-[90vw] sm:max-w-xl md:max-w-2xl lg:max-w-3xl rounded-xl shadow-lg transition-all duration-500 group-hover:border-bronze/40 group-hover:bg-charcoal/70 group-hover:shadow-lg text-right relative"
+            className="bg-white/80 border border-black/[0.05] backdrop-blur-xl p-6 sm:p-10 lg:p-12 w-fit max-w-[90vw] sm:max-w-xl md:max-w-2xl lg:max-w-3xl rounded-xl shadow-lg transition-all duration-500 group-hover:border-bronze/40 group-hover:bg-white/85 group-hover:shadow-lg text-right relative"
           >
             <div className="flex items-center justify-between gap-8 mb-4">
-              <span className="font-sans text-[10px] text-zinc-500 group-hover:text-bronze tracking-wider transition-colors duration-300 uppercase">
+              <span className="font-sans text-[10px] text-slate-400 group-hover:text-bronze tracking-wider transition-colors duration-300 uppercase">
                 Explore →
               </span>
               <span className="font-sans text-[10px] sm:text-[11px] tracking-wider text-bronze uppercase font-bold block">
                 Certifications
               </span>
             </div>
-            <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-[0.04em] uppercase text-white leading-[0.95] mb-3 sm:mb-4 group-hover:text-bronze transition-colors duration-300">
+            <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-[0.04em] uppercase text-ivory leading-[0.95] mb-3 sm:mb-4 group-hover:text-bronze transition-colors duration-300">
               Regulatory<br />Validation
             </h2>
-            <p className="text-zinc-200 text-sm sm:text-base md:text-lg lg:text-xl font-light tracking-wide leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base md:text-lg lg:text-xl font-light tracking-wide leading-relaxed">
               Every chassis tested and stamped to<br />global transport directives.
             </p>
           </motion.div>
@@ -50,17 +50,17 @@ export default function Compliance() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, margin: "-5%" }}
               transition={{ duration: 0.8 }}
-              className="w-full bg-charcoal/35 border border-white/[0.06] p-5 backdrop-blur-md rounded-xl relative shadow-lg group-hover:border-bronze/40 transition-all duration-300"
+              className="w-full bg-white/60 border border-black/[0.06] p-5 backdrop-blur-md rounded-xl relative shadow-lg group-hover:border-bronze/40 transition-all duration-300"
             >
-              <div className="flex items-center justify-between border-b border-white/[0.06] pb-2 mb-3">
+              <div className="flex items-center justify-between border-b border-black/[0.06] pb-2 mb-3">
                 <span className="font-sans text-[10px] tracking-wider text-bronze uppercase font-bold">
                   Certifications
                 </span>
-                <span className="font-sans text-[8px] text-zinc-500 tracking-wider">
+                <span className="font-sans text-[8px] text-slate-400 tracking-wider">
                   SECTION // 06
                 </span>
               </div>
-              <h2 className="font-serif text-3xl font-light tracking-[0.06em] uppercase text-white leading-none group-hover:text-bronze transition-colors duration-300">
+              <h2 className="font-serif text-3xl font-light tracking-[0.06em] uppercase text-ivory leading-none group-hover:text-bronze transition-colors duration-300">
                 Regulatory Validation
               </h2>
             </motion.div>
@@ -77,13 +77,13 @@ export default function Compliance() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, margin: "-5%" }}
               transition={{ duration: 0.8 }}
-              className="w-full bg-charcoal/35 border border-white/[0.06] p-5 backdrop-blur-md rounded-xl relative shadow-lg group-hover:border-bronze/40 transition-all duration-300"
+              className="w-full bg-white/60 border border-black/[0.06] p-5 backdrop-blur-md rounded-xl relative shadow-lg group-hover:border-bronze/40 transition-all duration-300"
             >
-              <p className="text-zinc-200 text-sm font-light tracking-wide leading-relaxed mb-4 text-center">
+              <p className="text-slate-600 text-sm font-light tracking-wide leading-relaxed mb-4 text-center">
                 Every chassis tested and stamped to global transport directives.
               </p>
               <div className="flex justify-center">
-                <span className="inline-flex items-center gap-2 font-sans text-[10px] tracking-wider text-white bg-bronze/15 border border-bronze/40 hover:bg-bronze hover:text-charcoal px-5 py-2.5 transition-all duration-300 uppercase font-bold">
+                <span className="inline-flex items-center gap-2 font-sans text-[10px] tracking-wider text-ivory bg-bronze/15 border border-bronze/40 hover:bg-bronze hover:text-white px-5 py-2.5 transition-all duration-300 uppercase font-bold">
                   Explore Section <span className="text-bronze group-hover:text-current font-sans font-bold">→</span>
                 </span>
               </div>

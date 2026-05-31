@@ -66,7 +66,7 @@ export default function BusBodyFabrication() {
       jsonLd={jsonLd}
     >
       <div className="flex flex-col gap-6">
-        <h2 className="font-serif text-xl sm:text-2xl font-bold text-white uppercase tracking-wider mt-4">
+        <h2 className="font-serif text-xl sm:text-2xl font-bold text-ivory uppercase tracking-wider mt-4">
           1. Industrial High-Precision Bus Body Fabrication
         </h2>
         <p>
@@ -76,7 +76,7 @@ export default function BusBodyFabrication() {
           Our heavy manufacturing division operates out of dedicated structural workshops. By using computerized fiber lasers and high-capacity hydraulic sheet-metal press brakes, we cut and form structural components within extreme tolerances. This high accuracy ensures that every framing node aligns perfectly during the welding process, preventing residual structural tension.
         </p>
 
-        <h2 className="font-serif text-xl sm:text-2xl font-bold text-white uppercase tracking-wider mt-4">
+        <h2 className="font-serif text-xl sm:text-2xl font-bold text-ivory uppercase tracking-wider mt-4">
           2. Certified Heavy-Duty Structural Welding
         </h2>
         <p>
@@ -86,7 +86,7 @@ export default function BusBodyFabrication() {
           By maintaining exact gas shielding mixtures and thermal inputs, we produce welds that match the strength of the base steel alloys. Our structural frames receive a comprehensive 8-year warranty against cracking, illustrating our engineering confidence.
         </p>
 
-        <h3 className="font-serif text-lg font-bold text-white uppercase tracking-wide mt-4">
+        <h3 className="font-serif text-lg font-bold text-ivory uppercase tracking-wide mt-4">
           3. Advanced Panel Tensioning & Skin Cladding
         </h3>
         <p>

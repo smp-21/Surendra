@@ -65,7 +65,7 @@ export default function SchoolBusManufacturers() {
       jsonLd={jsonLd}
     >
       <div className="flex flex-col gap-6">
-        <h2 className="font-serif text-xl sm:text-2xl font-bold text-white uppercase tracking-wider mt-4">
+        <h2 className="font-serif text-xl sm:text-2xl font-bold text-ivory uppercase tracking-wider mt-4">
           1. Uncompromising Safety in School Bus Manufacturing
         </h2>
         <p>
@@ -75,7 +75,7 @@ export default function SchoolBusManufacturers() {
           We construct our school buses on robust, heavy-duty commercial chassis. By integrating specialized helper springs, larger hydraulic dampers, and rigid sway bars, we guarantee stable ride dynamics that prevent vehicle sway and rollover behaviors, even when negotiating sharp turns or carrying maximum student capacities.
         </p>
 
-        <h2 className="font-serif text-xl sm:text-2xl font-bold text-white uppercase tracking-wider mt-4">
+        <h2 className="font-serif text-xl sm:text-2xl font-bold text-ivory uppercase tracking-wider mt-4">
           2. Certified Anti-Roll Cage Steel Engineering
         </h2>
         <p>
@@ -85,7 +85,7 @@ export default function SchoolBusManufacturers() {
           This skeleton is securely welded directly to the primary chassis beams, providing incredible crash-resistance. In testing, our roll cages withstand lateral crash loads that far exceed basic CMVR mandates, ensuring a highly secure occupant cabin.
         </p>
 
-        <h3 className="font-serif text-lg font-bold text-white uppercase tracking-wide mt-4">
+        <h3 className="font-serif text-lg font-bold text-ivory uppercase tracking-wide mt-4">
           3. Complete Institutional Integration Suite
         </h3>
         <p>

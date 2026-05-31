@@ -83,9 +83,9 @@ const CITY_DATA: Record<string, {
     region: "Karnataka",
     rtoCode: "KA-01 / KA-03 / KA-53 RTO Compliant",
     corridor: "Bengaluru-Chennai / Hyderabad Economic Corridors",
-    specialization: "Bespoke IT Executive Shuttles & Heavy Multi-Axle Volvo Liners",
+    specialization: "Bespoke IT Executive Shuttles & Heavy Multi-Axle Premium Liners",
     localBody: "Bruhat Bengaluru Mahanagara Palike (BBMP) transit regulations",
-    intro: "Bengaluru is the tech capital of India, requiring advanced executive transport networks and long-distance intercity luxury liners. Surendra & Co. builds bespoke IT corporate employee coaches and authorized multi-axle luxury coachwork for high-end Volvo and Scania chassis.",
+    intro: "Bengaluru is the tech capital of India, requiring advanced executive transport networks and long-distance intercity luxury liners. Surendra & Co. builds bespoke IT corporate employee coaches and authorized multi-axle luxury coachwork for high-end multi-axle premium chassis platforms.",
     weldSpec: "Low-vibration, high-rigidity structural space frames designed with heavy sound-absorbing composite panelling.",
     complianceSpec: "Karnataka State RTO commercial directives and advanced multiplex wiring safety approvals.",
     faqs: [
@@ -186,7 +186,7 @@ export default async function CityPage({ params }: PageProps) {
       jsonLd={jsonLd}
     >
       <div className="flex flex-col gap-6">
-        <h2 className="font-serif text-xl sm:text-2xl font-bold text-white uppercase tracking-wider mt-4">
+        <h2 className="font-serif text-xl sm:text-2xl font-bold text-ivory uppercase tracking-wider mt-4">
           1. Bespoke Coach Building Engineered for {data.name} Roads
         </h2>
         <p>
@@ -196,7 +196,7 @@ export default async function CityPage({ params }: PageProps) {
           At our state-of-the-art workshops, every chassis integration project starts with detailed structural reviews. By examining local road topography and fleet routes, we customize our anti-roll safety frames to handle maximum structural stress. This guarantees outstanding structural longevity, preserving the value of your commercial fleet.
         </p>
 
-        <h2 className="font-serif text-xl sm:text-2xl font-bold text-white uppercase tracking-wider mt-4">
+        <h2 className="font-serif text-xl sm:text-2xl font-bold text-ivory uppercase tracking-wider mt-4">
           2. Specialized Metal Treatment & Welding Guidelines
         </h2>
         <p>
@@ -214,7 +214,7 @@ export default async function CityPage({ params }: PageProps) {
           </li>
         </ul>
 
-        <h3 className="font-serif text-lg font-bold text-white uppercase tracking-wide mt-4">
+        <h3 className="font-serif text-lg font-bold text-ivory uppercase tracking-wide mt-4">
           3. Absolute Regional RTO Compliance
         </h3>
         <p>

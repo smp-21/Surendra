@@ -188,7 +188,7 @@ export default function HomeClient() {
   }, [isLoading]);
 
   return (
-    <div className="bg-charcoal text-ivory min-h-screen relative selection:bg-bronze/30 selection:text-white flex flex-col justify-between">
+    <div className="bg-charcoal text-ivory min-h-screen relative selection:bg-bronze/20 selection:text-ivory flex flex-col justify-between">
       <AnimatePresence mode="wait">
         {isLoading ? (
           <Preloader
@@ -218,10 +218,10 @@ export default function HomeClient() {
             >
               <a
                 href="#commission"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4.5 border border-bronze/60 bg-charcoal/90 text-white hover:bg-bronze hover:text-charcoal hover:scale-[1.02] active:scale-[0.98] text-xs sm:text-sm tracking-[0.08em] font-medium uppercase transition-all duration-500 rounded-full cursor-pointer group shadow-lg relative overflow-hidden backdrop-blur-lg"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4.5 border border-bronze/60 bg-white/95 text-ivory hover:bg-bronze hover:text-white hover:scale-[1.02] active:scale-[0.98] text-xs sm:text-sm tracking-[0.08em] font-medium uppercase transition-all duration-500 rounded-full cursor-pointer group shadow-lg relative overflow-hidden backdrop-blur-lg"
               >
                 <span>Start Your Build</span>
-                <span className="text-[10px] text-bronze group-hover:text-charcoal transition-colors duration-500 font-sans tracking-wide font-medium">→</span>
+                <span className="text-[10px] text-bronze group-hover:text-white transition-colors duration-500 font-sans tracking-wide font-medium">→</span>
               </a>
             </div>
 
@@ -284,7 +284,7 @@ export default function HomeClient() {
                 Bespoke Commission Form (Contact)
                 Renders below the visual scroll container as a standard full-screen static block.
               */}
-              <div id="commission" className="relative bg-charcoal border-t border-white/[0.06]">
+              <div id="commission" className="relative bg-charcoal border-t border-black/[0.06]">
                 <Contact />
               </div>
 

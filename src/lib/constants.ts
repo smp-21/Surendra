@@ -27,24 +27,24 @@ export const ORIGIN_COPY = {
 
 export const COACH_RANGE = [
   {
-    id: "volvo-9600-xl",
-    name: "VOLVO 9600 XL",
+    id: "intercity-cruiser-xl",
+    name: "INTERCITY CRUISER XL",
     eyebrow: "ELITE INTERCITY CRUISER",
-    description: "The absolute flagship of premium long-haul luxury coach transport. Featuring high-grade aerodynamic composites, customized multi-zone suspension, and a silent coach cabin.",
+    description: "The absolute flagship of premium long-haul luxury coach transport. Built on premium Volvo and other leading global chassis platforms, featuring high-grade aerodynamic composites, customized multi-zone suspension, and a silent coach cabin. Also adaptable for premium city and regional express services.",
     specs: {
-      chassis: "Volvo Structural Platform Grid",
+      chassis: "Certified Structural Platform Grid",
       material: "High-Tensile Galvanized Steel Frame",
       suspension: "Electronic Air Ride w/ Leveling",
       payload: "19.5 Metric Tons",
     },
   },
   {
-    id: "volvo-b7r-platform",
-    name: "VOLVO B7R PLATFORM",
+    id: "heavy-duty-platform",
+    name: "HEAVY DUTY PLATFORM",
     eyebrow: "HEAVY DUTY ROAD CHASSIS",
-    description: "The ultimate chassis workhorse, engineered with high-torsion cold-rolled steel beams, optimized axle loads, and dual pneumatic braking grids to support harsh intercity routes.",
+    description: "The ultimate chassis workhorse, engineered with high-torsion cold-rolled steel beams, optimized axle loads, and dual pneumatic braking grids. Built to support demanding intercity, regional, and city transit routes.",
     specs: {
-      chassis: "Volvo Heavy Duty Rigid Beams",
+      chassis: "Industrial Heavy Duty Rigid Beams",
       material: "Reinforced Alloy Box Girders",
       suspension: "Heavy Semi-Elliptic Leaf Springs",
       payload: "24.0 Metric Tons",
@@ -66,7 +66,7 @@ export const COACH_RANGE = [
     id: "institutional-bus",
     name: "INSTITUTIONAL BUS",
     eyebrow: "MASS HIGH-SECURITY TRANSIT",
-    description: "Mass transit chassis engineered for ultimate school and corporate safety standards, complying with rigorous AIS body directives and anti-roll framework structures.",
+    description: "Mass transit chassis engineered for ultimate school, corporate, and city fleet safety standards, complying with rigorous AIS body directives and anti-roll framework structures.",
     specs: {
       chassis: "Extended Heavy Wheelbase Base",
       material: "Welded Tubular Steel Anti-Roll Cage",
@@ -81,7 +81,7 @@ export const SERVICES = [
     id: "premium-engine",
     title: "PREMIUM ENGINE",
     subtitle: "Heavy-Duty Power Integration",
-    description: "Architectural packaging and custom coupling of high-torque industrial engines (Volvo B7R/9600 series) with precise power transmissions, custom exhaust manifolds, and reinforced mountings.",
+    description: "Architectural packaging and custom coupling of high-torque industrial engines across leading commercial chassis platforms with precise power transmissions, custom exhaust manifolds, and reinforced mountings.",
     metric: "450 HP / 2100 NM LIMIT",
   },
   {
@@ -150,8 +150,8 @@ export const COMPLIANCE_LIST = [
     description: "Guarantees that every commissioned vehicle platform holds instant commercial fitness licensing and registration permissions.",
   },
   {
-    code: "VOLVO APPROVED",
+    code: "OEM CERTIFIED",
     label: "Authorized OEM Builder",
-    description: "Officially certified as an authorized custom bodybuilder for Volvo commercial chassis platforms, preserving OEM warranty guarantees.",
+    description: "Officially certified as an authorized custom bodybuilder for Volvo and other leading commercial chassis platforms, preserving manufacturer warranty guarantees.",
   },
 ];

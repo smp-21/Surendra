@@ -20,7 +20,7 @@ export default function Preloader({ progress, activeBatch, totalBatches }: Prelo
       className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-charcoal text-ivory select-none overflow-hidden"
     >
       {/* Soft radial warmth from center */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(176,144,112,0.04)_0%,transparent_60%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(139,111,78,0.06)_0%,transparent_60%)] pointer-events-none" />
 
       {/* Central Brand Reveal */}
       <div className="flex flex-col items-center text-center relative z-10 gap-5">
@@ -30,7 +30,7 @@ export default function Preloader({ progress, activeBatch, totalBatches }: Prelo
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2.4, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="font-sans text-[10px] tracking-[0.25em] uppercase text-zinc-500 font-normal"
+          className="font-sans text-[10px] tracking-[0.25em] uppercase text-slate-400 font-normal"
         >
           ESTD. 1984
         </motion.span>
@@ -40,7 +40,7 @@ export default function Preloader({ progress, activeBatch, totalBatches }: Prelo
           initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[0.06em] text-white leading-none"
+          className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[0.06em] text-ivory leading-none"
         >
           SURENDRA & CO.
         </motion.h1>
@@ -63,7 +63,7 @@ export default function Preloader({ progress, activeBatch, totalBatches }: Prelo
           className="w-48 sm:w-64 mt-6"
         >
           {/* Track */}
-          <div className="w-full h-[1px] bg-white/[0.06] rounded-full overflow-hidden">
+          <div className="w-full h-[1px] bg-black/[0.06] rounded-full overflow-hidden">
             {/* Fill */}
             <motion.div
               className="h-full bg-bronze/40 rounded-full"
@@ -76,7 +76,7 @@ export default function Preloader({ progress, activeBatch, totalBatches }: Prelo
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.2 }}
-            className="block text-center font-sans text-[9px] text-zinc-600 tracking-wider mt-3 font-normal"
+            className="block text-center font-sans text-[9px] text-slate-300 tracking-wider mt-3 font-normal"
           >
             {percentage}%
           </motion.span>
@@ -88,7 +88,7 @@ export default function Preloader({ progress, activeBatch, totalBatches }: Prelo
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2.5, delay: 1.4, ease: "easeOut" }}
-        className="absolute bottom-8 left-0 right-0 text-center text-[9px] font-sans text-zinc-700 tracking-wider"
+        className="absolute bottom-8 left-0 right-0 text-center text-[9px] font-sans text-slate-300 tracking-wider"
       >
         © {new Date().getFullYear()} Surendra & Co.
       </motion.div>

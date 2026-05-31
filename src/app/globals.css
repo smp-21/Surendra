@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #141820;
-  --foreground: #f0ede8;
+  --background: #F5F3F0;
+  --foreground: #1E293B;
 }
 
 @theme {
@@ -10,15 +10,15 @@
   --font-mono: var(--font-geist-mono);
   --font-serif: var(--font-serif);
   
-  /* Brand color tokens: Warm Premium Corporate */
-  --color-charcoal: #141820;
-  --color-graphite: #1a1f2b;
-  --color-steel: #8b95a3;
-  --color-steel-light: #b3bcc9;
-  --color-stone: #232a38;
-  --color-ivory: #f0ede8;
-  --color-bronze: #b09070;
-  --color-bronze-dark: #6b5d4f;
+  /* Brand color tokens: Warm Premium Light Corporate */
+  --color-charcoal: #F5F3F0;
+  --color-graphite: #EBE8E4;
+  --color-steel: #6B7280;
+  --color-steel-light: #9CA3AF;
+  --color-stone: #E8E5E1;
+  --color-ivory: #1E293B;
+  --color-bronze: #8B6F4E;
+  --color-bronze-dark: #7A4A1E;
 }
 
 body {
@@ -34,14 +34,14 @@ body {
   height: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-charcoal);
+  background: var(--color-graphite);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(176, 144, 112, 0.3);
+  background: rgba(139, 111, 78, 0.35);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(176, 144, 112, 0.5);
+  background: rgba(139, 111, 78, 0.55);
 }
 
 /* Base interactive transitions */
@@ -63,7 +63,7 @@ a, button {
 /* Clean Headline Styling */
 .shimmer-text {
   background: none;
-  color: white;
+  color: var(--color-ivory);
   -webkit-background-clip: unset;
   background-clip: unset;
   animation: none;
@@ -73,11 +73,11 @@ a, button {
 
 /* Subtle text shadows for legibility on scroll backgrounds */
 .text-shadow-premium {
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
 }
 
 .text-shadow-subtle {
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Lenis Smooth Scroll */
@@ -89,8 +89,8 @@ html.lenis, html.lenis body { height: auto; }
 
 /* Subtle Breathing Watermark */
 @keyframes silent-roar {
-  0%, 100% { opacity: 0.02; }
-  50% { opacity: 0.05; }
+  0%, 100% { opacity: 0.03; }
+  50% { opacity: 0.07; }
 }
 
 .animate-silent-roar {

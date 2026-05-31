@@ -69,7 +69,7 @@ export default function BusHardwareManufacturers() {
       jsonLd={jsonLd}
     >
       <div className="flex flex-col gap-6">
-        <h2 className="font-serif text-xl sm:text-2xl font-bold text-white uppercase tracking-wider mt-4">
+        <h2 className="font-serif text-xl sm:text-2xl font-bold text-ivory uppercase tracking-wider mt-4">
           1. Elite B2B Bus Body Hardware Manufacturing
         </h2>
         <p>
@@ -79,7 +79,7 @@ export default function BusHardwareManufacturers() {
           We manufacture our hardware catalog within high-precision tooling workshops. Utilizing cold-forging, zinc-die casting, and computerized CNC milling, we construct components that maintain structural tolerances of less than 0.05mm. This guarantees that hinges do not sag, locks do not seize, and handles do not crack over years of heavy transit operations.
         </p>
 
-        <h2 className="font-serif text-xl sm:text-2xl font-bold text-white uppercase tracking-wider mt-4">
+        <h2 className="font-serif text-xl sm:text-2xl font-bold text-ivory uppercase tracking-wider mt-4">
           2. ASTM-B117 Standard Corrosion Resistance
         </h2>
         <p>
@@ -89,7 +89,7 @@ export default function BusHardwareManufacturers() {
           All exterior components are finished with heavy chrome plating, durable powder coats, or constructed directly from specialized Marine-Grade Stainless Steel. This makes them highly resistant to environmental acids and mechanical scratching, ensuring smooth B2B operations under extreme workloads.
         </p>
 
-        <h3 className="font-serif text-lg font-bold text-white uppercase tracking-wide mt-4">
+        <h3 className="font-serif text-lg font-bold text-ivory uppercase tracking-wide mt-4">
           3. Custom Extruded Aluminum Profiles & Fittings
         </h3>
         <p>

@@ -66,7 +66,7 @@ export default function CustomBusInteriors() {
       jsonLd={jsonLd}
     >
       <div className="flex flex-col gap-6">
-        <h2 className="font-serif text-xl sm:text-2xl font-bold text-white uppercase tracking-wider mt-4">
+        <h2 className="font-serif text-xl sm:text-2xl font-bold text-ivory uppercase tracking-wider mt-4">
           1. Bespoke Industrial Custom Bus Interiors
         </h2>
         <p>
@@ -76,7 +76,7 @@ export default function CustomBusInteriors() {
           Each interior refit follows strict ergonomic blueprints. We utilize premium architectural composites, reinforced aluminum mounting brackets, and self-lubricating latches to ensure that every visual surface, cabinet door, and luggage locker operates without rattling, even when traversing high-speed expressways or bumpy country roads.
         </p>
 
-        <h2 className="font-serif text-xl sm:text-2xl font-bold text-white uppercase tracking-wider mt-4">
+        <h2 className="font-serif text-xl sm:text-2xl font-bold text-ivory uppercase tracking-wider mt-4">
           2. Certified Fire-Retardant Acoustic Insulations
         </h2>
         <p>
@@ -86,7 +86,7 @@ export default function CustomBusInteriors() {
           To ensure quiet passenger journeys, we apply high-density elastomeric acoustic mats throughout the passenger floorboards, sidewalls, and engine bulkheads. This provides deep noise-attenuation, converting transit spaces into calm, premium sanctuaries.
         </p>
 
-        <h3 className="font-serif text-lg font-bold text-white uppercase tracking-wide mt-4">
+        <h3 className="font-serif text-lg font-bold text-ivory uppercase tracking-wide mt-4">
           3. Smart Multiplex Electrical Infrastructure
         </h3>
         <p>

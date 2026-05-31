@@ -66,7 +66,7 @@ export default function LuxuryBusBuilders() {
       jsonLd={jsonLd}
     >
       <div className="flex flex-col gap-6">
-        <h2 className="font-serif text-xl sm:text-2xl font-bold text-white uppercase tracking-wider mt-4">
+        <h2 className="font-serif text-xl sm:text-2xl font-bold text-ivory uppercase tracking-wider mt-4">
           1. Elite Coachbuilding & Luxury Customization
         </h2>
         <p>
@@ -76,7 +76,7 @@ export default function LuxuryBusBuilders() {
           Each luxury coach begins its journey in our design workshop. By using 3D modeling and stress simulation software, we engineer customized weight distribution patterns to support custom amenities. This allows us to integrate heavy features like biochemical restrooms, large chemical clean-water tanks, and advanced HVAC units while preserving perfect vehicle chassis balance and axle weight limits.
         </p>
 
-        <h2 className="font-serif text-xl sm:text-2xl font-bold text-white uppercase tracking-wider mt-4">
+        <h2 className="font-serif text-xl sm:text-2xl font-bold text-ivory uppercase tracking-wider mt-4">
           2. Complete Acoustic & Thermal Isolation
         </h2>
         <p>
@@ -86,7 +86,7 @@ export default function LuxuryBusBuilders() {
           This isolates the cabin from engine hums and road rattle, maintaining cabin sound levels under 55 decibels. In addition, our multi-zone roof HVAC ducting features custom silencers to deliver quiet, draft-free air conditioning to every passenger compartment.
         </p>
 
-        <h3 className="font-serif text-lg font-bold text-white uppercase tracking-wide mt-4">
+        <h3 className="font-serif text-lg font-bold text-ivory uppercase tracking-wide mt-4">
           3. Customized Executive & Sleeper Interiors
         </h3>
         <p>

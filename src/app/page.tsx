@@ -55,7 +55,7 @@ export default function Home() {
         "url": "https://www.surendraco.com",
         "logo": "https://www.surendraco.com/logo.png",
         "foundingDate": "1984",
-        "description": "Premium B2B bus body builders and bus hardware manufacturers in India. Authorized Volvo commercial bodybuilders.",
+        "description": "Premium B2B bus body builders and bus hardware manufacturers in India. Authorized commercial chassis bodybuilders.",
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+91-984-555-1984",

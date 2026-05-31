@@ -54,7 +54,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${cormorantGaramond.variable} antialiased`}
     >
-      <body className="flex flex-col min-h-screen bg-zinc-950 text-white">
+      <body className="flex flex-col min-h-screen bg-charcoal text-ivory">
         <SmoothScroll>{children}</SmoothScroll>
         <CustomContextMenu />
         <Analytics />

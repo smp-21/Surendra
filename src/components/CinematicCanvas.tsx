@@ -210,8 +210,8 @@ export default function CinematicCanvas({ images }: CinematicCanvasProps) {
 
 
       {/* Cinematic Dark Vignette — lightened for better video visibility */}
-      <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-charcoal/50 pointer-events-none mix-blend-multiply opacity-50" />
-      <div className="absolute inset-0 bg-gradient-to-r from-charcoal/60 via-transparent to-charcoal/60 pointer-events-none opacity-25" />
+      <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-charcoal/25 pointer-events-none mix-blend-multiply opacity-50" />
+      <div className="absolute inset-0 bg-gradient-to-r from-charcoal/30 via-transparent to-charcoal/30 pointer-events-none opacity-25" />
 
 
 
