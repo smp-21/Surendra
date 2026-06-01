@@ -54,6 +54,11 @@ export default function Hero() {
             <span className="text-ivory/20 font-light">|</span>
             <span className="text-ivory">MASTER COACHBUILDERS</span>
           </div>
+
+          {/* Expanded Market Scope Sub-Text */}
+          <p className="font-sans text-[11px] sm:text-xs md:text-sm text-slate-500 font-light tracking-wide leading-relaxed mt-5 sm:mt-6 max-w-2xl text-center px-4">
+            Engineering robust, high-capacity urban transit fleets and premium intercity coaches. Built on certified global chassis platforms for unmatched structural safety.
+          </p>
           
         </motion.div>
       </div>

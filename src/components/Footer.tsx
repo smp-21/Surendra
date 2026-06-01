@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { ArrowUp } from "lucide-react";
 
 export default function Footer() {
@@ -12,12 +13,12 @@ export default function Footer() {
   };
 
   const navLinks = [
-    { label: "Home Cinematic", href: "#home" },
-    { label: "Heritage Brief", href: "#origin" },
-    { label: "Coach Range", href: "#range" },
-    { label: "Engineering Services", href: "#services" },
-    { label: "Methodology", href: "#process" },
-    { label: "Certifications", href: "#compliance" },
+    { label: "Home Cinematic", href: "/" },
+    { label: "Heritage Brief", href: "/heritage" },
+    { label: "Coach Range", href: "/range" },
+    { label: "Engineering Services", href: "/services" },
+    { label: "Methodology", href: "/process" },
+    { label: "Certifications", href: "/compliance" },
   ];
 
   return (
@@ -69,7 +70,7 @@ export default function Footer() {
             </h4>
             <div className="flex flex-col gap-3.5 font-sans text-sm">
               {navLinks.map((link, idx) => (
-                <a
+                <Link
                   key={idx}
                   href={link.href}
                   onMouseEnter={() => setHoveredLink(idx)}
@@ -85,7 +86,7 @@ export default function Footer() {
                   </span>
                   <span className="text-bronze/15 group-hover:text-bronze-dark transition-colors duration-300">//</span>
                   <span className="tracking-wide normal-case font-normal">{link.label}</span>
-                </a>
+                </Link>
               ))}
             </div>
           </div>

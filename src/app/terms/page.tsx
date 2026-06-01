@@ -105,9 +105,9 @@ export default function TermsPage() {
                 </h2>
               </div>
               <div className="md:col-span-2 space-y-4">
-                <h3 className="font-serif text-2xl text-ivory font-medium">Prohibited Platform Misuse</h3>
+                <h3 className="font-serif text-2xl text-ivory font-medium">Platform Security &amp; Usage</h3>
                 <p className="text-slate-500 font-light leading-relaxed text-sm">
-                  Users are strictly prohibited from utilizing the platform to transmit spam, load arbitrary script fragments, perform brute-force attacks on our contact endpoints, or inject malicious payloads into our inquiry ledger pipelines.
+                  Platform Security &amp; Usage: To maintain the integrity of our engineering systems, automated data collection, unverified script executions, and unauthorized network probing are restricted.
                 </p>
               </div>
             </motion.div>

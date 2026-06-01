@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Preloader from "@/components/Preloader";
 import CinematicCanvas from "@/components/CinematicCanvas";
 import Hero from "@/components/Hero";
+import TrustMetrics from "@/components/TrustMetrics";
 import Origin from "@/components/Origin";
 import Projects from "@/components/Projects";
 import Capabilities from "@/components/Capabilities";
@@ -175,7 +176,7 @@ export default function HomeClient() {
     if (isLoading) return;
     const handleScroll = () => {
       // Hide CTA when scrolling past the runway and contact form comes up
-      const threshold = window.innerHeight * 5.8;
+      const threshold = window.innerHeight * 6.8;
       if (window.scrollY > threshold) {
         setShowFixedCta(false);
       } else {
@@ -233,7 +234,7 @@ export default function HomeClient() {
                 Holds all B2B narrative components as cinematic overlay panels.
                 Exposes the animated cinematic video sequence with absolute visual clarity.
               */}
-              <div className="relative w-full h-[700vh]">
+              <div className="relative w-full h-[800vh]">
                 
                 {/* Pinned Sticky Canvas Background */}
                 <div className="sticky top-0 h-screen w-full overflow-hidden z-0">
@@ -248,7 +249,12 @@ export default function HomeClient() {
                     <Hero />
                   </div>
 
-                  {/* Section 02: Origin & Heritage (100vh to 200vh) */}
+                  {/* Section 01.5: Trust Metrics (100vh to 200vh) */}
+                  <div className="h-screen w-full shrink-0">
+                    <TrustMetrics />
+                  </div>
+
+                  {/* Section 02: Origin & Heritage (200vh to 300vh) */}
                   <div className="h-screen w-full shrink-0">
                     <Origin />
                   </div>

@@ -42,7 +42,7 @@ export const COACH_RANGE = [
     id: "heavy-duty-platform",
     name: "HEAVY DUTY PLATFORM",
     eyebrow: "HEAVY DUTY ROAD CHASSIS",
-    description: "The ultimate chassis workhorse, engineered with high-torsion cold-rolled steel beams, optimized axle loads, and dual pneumatic braking grids. Built to support demanding intercity, regional, and city transit routes.",
+    description: "The ultimate workhorse for everyday public transport. Engineered with high-torsion cold-rolled steel beams and optimized axle loads to support high-frequency city transit, regional commercial routes, and heavy-duty fleet operations.",
     specs: {
       chassis: "Industrial Heavy Duty Rigid Beams",
       material: "Reinforced Alloy Box Girders",
@@ -66,7 +66,7 @@ export const COACH_RANGE = [
     id: "institutional-bus",
     name: "INSTITUTIONAL BUS",
     eyebrow: "MASS HIGH-SECURITY TRANSIT",
-    description: "Mass transit chassis engineered for ultimate school, corporate, and city fleet safety standards, complying with rigorous AIS body directives and anti-roll framework structures.",
+    description: "Mass transit chassis engineered for maximum passenger volume and ultimate safety. Fully compliant with rigorous AIS body directives for school networks, corporate staff shuttles, and standard metropolitan city lines.",
     specs: {
       chassis: "Extended Heavy Wheelbase Base",
       material: "Welded Tubular Steel Anti-Roll Cage",
